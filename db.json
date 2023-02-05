@@ -1,0 +1,335 @@
+{
+    "electronics":[
+        {
+          "img": "https://p.rmjo.in/productSquare/yhx594uv-500x500.jpg",
+          "title": "Samsung Galaxy S10+ ",
+          "price": 1659,
+          "category": "smartphone",
+          "id": 1,
+          "delivery": "4 days",
+          "deliveryicon": "https://www.rentomojo.com/public/images/fast-delivery/fast-delivery.svg"
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/vmbb6qhr-500x500.jpg",
+          "title": "Apple iPhone XR 64GB ",
+          "price": 1839,
+          "category": "smartphone",
+          "id": 2,
+          "delivery": "4 days",
+          "deliveryicon": "https://www.rentomojo.com/public/images/fast-delivery/fast-delivery.svg"
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/fgcl0o0i-500x500.jpg",
+          "title": "Apple iPhone 6S (Space Grey)",
+          "price": 799,
+          "category": "smartphone",
+          "id": 3,
+          "delivery": "4 days",
+          "deliveryicon": "https://www.rentomojo.com/public/images/fast-delivery/fast-delivery.svg"
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/lbf7407m-500x500.jpg",
+          "title": "OnePlus 7 (Mirror Gray)",
+          "price": 1109,
+          "category": "smartphone",
+          "id": 4,
+          "delivery": "4 days",
+          "deliveryicon": "https://www.rentomojo.com/public/images/fast-delivery/fast-delivery.svg"
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/mxzy0xf9-500x500.jpg",
+          "title": "OnePlus 7 Pro (Mirror Gray)",
+          "price": 1669,
+          "category": "smartphone",
+          "id": 5,
+          "delivery": "4 days",
+          "deliveryicon": "https://www.rentomojo.com/public/images/fast-delivery/fast-delivery.svg"
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/fhonufah-500x500.jpg",
+          "title": "Samsung Galaxy Note 10 (Aura Black)",
+          "price": 2229,
+          "id":15,
+          "delivery": "4 days",
+          "deliveryicon": "https://www.rentomojo.com/public/images/fast-delivery/fast-delivery.svg"
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/jir7agyl-500x500.jpg",
+          "title": "Windows i5/16GB - Powered by MF",
+          "price": 4821,
+          "category": "laptop",
+          "id": 16,
+          "delivery": "5 days",
+          "deliveryicon": "https://www.rentomojo.com/public/images/fast-delivery/fast-delivery.svg"
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/wnqhs5oi-500x500.jpg",
+          "title": "MacBook Pro i5 - Powered by ABCOM",
+          "price": 4001,
+          "category": "laptop",
+          "id": 17,
+          "delivery": "3 days",
+          "deliveryicon": "https://www.rentomojo.com/public/images/fast-delivery/fast-delivery.svg"
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/d121e7k9-500x500.jpg",
+          "title": "Windows i3/4GB - Powered by ABcom",
+          "price": 2797,
+          "category": "laptop",
+          "id": 18,
+          "delivery": "3 days",
+          "deliveryicon": "https://www.rentomojo.com/public/images/fast-delivery/fast-delivery.svg"
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/ujzfusgx-500x500.jpg",
+          "title": "MacBook Pro i7 - Powered by MF",
+          "price": 12373,
+          "category": "laptop",
+          "id": 19,
+          "delivery": "5 days",
+          "deliveryicon": "https://www.rentomojo.com/public/images/fast-delivery/fast-delivery.svg"
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/7gqbt0tx-500x500.jpg",
+          "title": "MacBook Air - Powered by MF",
+          "price": 6606,
+          "category": "laptop",
+          "id": 20,
+          "delivery": "5 days",
+          "deliveryicon": "https://www.rentomojo.com/public/images/fast-delivery/fast-delivery.svg"
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/hyob6tn7-500x500.jpg",
+          "title": "MacBook Pro i5 - Powered by MF",
+          "price": 8482,
+          "category": "laptop",
+          "id": 21,
+          "delivery": "5 days",
+          "deliveryicon": "https://www.rentomojo.com/public/images/fast-delivery/fast-delivery.svg"
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/siecu434-500x500.jpg",
+          "title": "Windows i5/4GB - Powered by MF",
+          "price": "₹3750/",
+          "category": "laptop",
+          "id": 22,
+          "delivery": "5 days",
+          "deliveryicon": "https://www.rentomojo.com/public/images/fast-delivery/fast-delivery.svg"
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/nheby11s-500x500.jpg",
+          "title": "Windows AMD 4GB - Powered by ABCOM",
+          "price": 2302,
+          "category": "laptop",
+          "id": 23,
+          "delivery": "3 days",
+          "deliveryicon": "https://www.rentomojo.com/public/images/fast-delivery/fast-delivery.svg"
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/298cbqj0-500x500.jpg",
+          "title": "Lenovo IdeaPad 3, Intel Core i5 processor, 10th Gen - (8GB / 1TB HDD / Win 10 Home, 15.6 inch, Platinum Grey)",
+          "price": "₹1489/",
+          "category": "laptop",
+          "id": 24,
+          "delivery": "",
+          "deliveryicon": ""
+        },
+        {
+          "img": "https://www.rentomojo.com/public/images/loader/image-loader.gif",
+          "title": "HP 15 Notebook , Intel Core i3 processor , 7th Gen  - (4GB / 1TB HDD / Win 10 Home OS / 15.6 inch/ Silver )",
+          "price": 1069,
+          "category": "laptop",
+          "id": 25,
+          "delivery": "",
+          "deliveryicon": ""
+        },
+        {
+          "img": "https://www.rentomojo.com/public/images/loader/image-loader.gif",
+          "title": "Lenovo Ideapad 330 , Intel Core i3 processor , 7th Gen  - (4GB / 1TB HDD / Win 10 Home OS / 15.6 inch / Platinum Grey)",
+          "price": 1169,
+          "category": "laptop",
+          "id": 26,
+          "delivery": "",
+          "deliveryicon": ""
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/4m2jowry-500x500.jpg",
+          "title": "Google Home",
+          "price": 229,
+          "category": "smartdevices",
+          "id": 27,
+          "delivery": "",
+          "deliveryicon": ""
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/wph9nyr6-500x500.jpg",
+          "title": "Amazon Echo",
+          "price": 116,
+          "category": "smartdevices",
+          "id": 28,
+          "delivery": "",
+          "deliveryicon": ""
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/rsuzkom0-500x500.jpg",
+          "title": "Amazon Fire Tv Stick",
+          "price": 119,
+          "category": "smartdevices",
+          "id": 29,
+          "delivery": "",
+          "deliveryicon": ""
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/xpe1x980-500x500.jpg",
+          "title": "boat avante",
+          "price": 150,
+          "category": "smartdevices",
+          "id": 30,
+          "delivery": "",
+          "deliveryicon": ""
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/ojeg5074-500x500.jpg",
+          "title": "Apple IPad",
+          "price": 2499,
+          "category": "tablets",
+          "id": 31,
+          "delivery": "",
+          "deliveryicon": ""
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/dvlj6ic5-500x500.jpg",
+          "title": "Samsung Tab",
+          "price": 1590,
+          "category": "tablets",
+          "id": 32,
+          "delivery": "",
+          "deliveryicon": ""
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/prlx76wq-500x500.jpg",
+          "title": "Apple IPad Mini",
+          "price": 1129,
+          "category": "tablets",
+          "id": 33,
+          "delivery": "",
+          "deliveryicon": ""
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/am525ijh-500x500.jpg",
+          "title": "Cross Trainer With Seat",
+          "price": 1189,
+          "category": "crosstrainer",
+          "id": 42,
+          "delivery": "4 days",
+          "deliveryicon": "https://www.rentomojo.com/public/images/fast-delivery/fast-delivery.svg"
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/fheitssa-500x500.jpg",
+          "title": "Motorized Treadmill CTM 14A",
+          "price": 2099,
+          "category": "treadmill",
+          "id": 34,
+          "delivery": "4 days",
+          "deliveryicon": "https://www.rentomojo.com/public/images/fast-delivery/fast-delivery.svg"
+        },
+        {
+          "img": "https://www.rentomojo.com/public/images/loader/image-loader.gif",
+          "title": "Cross Trainer C-500",
+          "price": 1109,
+          "id":99,
+          "delivery": "4 days",
+          "deliveryicon": "https://www.rentomojo.com/public/images/fast-delivery/fast-delivery.svg"
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/nkfec4p7-500x500.jpg",
+          "title": "Motorized Treadmill AF 517",
+          "price": 2359,
+          "category": "treadmill",
+          "id": 35,
+          "delivery": "4 days",
+          "deliveryicon": "https://www.rentomojo.com/public/images/fast-delivery/fast-delivery.svg"
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/b8g0ufr1-500x500.jpg",
+          "title": "Motorized Treadmill AF-515",
+          "price": 2359,
+          "category": "treadmill",
+          "id": 36,
+          "delivery": "4 days",
+          "deliveryicon": "https://www.rentomojo.com/public/images/fast-delivery/fast-delivery.svg"
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/68cb0ce2-500x500.jpg",
+          "title": "Leg Massager IF-868",
+          "price": 1339,
+          "category": "massager",
+          "id": 40,
+          "delivery": "4 days",
+          "deliveryicon": "https://www.rentomojo.com/public/images/fast-delivery/fast-delivery.svg"
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/niqfc8xs-500x500.jpg",
+          "title": "Crazy Fit Massager VP-500",
+          "price": 929,
+          "category": "massager",
+          "id": 43,
+          "delivery": "4 days",
+          "deliveryicon": "https://www.rentomojo.com/public/images/fast-delivery/fast-delivery.svg"
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/5319tgr7-500x500.jpg",
+          "title": "Exercise Cycle AB-100",
+          "price": 409,
+          "category": "cycle",
+          "id": 44,
+          "delivery": "",
+          "deliveryicon": ""
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/k515c57w-500x500.jpg",
+          "title": "Smart Magnetic Exercise Bike",
+          "price": 619,
+          "category": "cycle",
+          "id": 45,
+          "delivery": "",
+          "deliveryicon": ""
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/jsxcydcf-500x500.jpg",
+          "title": "Auto Inclination Treadmill T-501",
+          "price": 2119,
+          "category": "treadmill",
+          "id": 37,
+          "delivery": "",
+          "deliveryicon": ""
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/bk7tbcu2-500x500.jpg",
+          "title": "Foldable Treadmill TD-M4",
+          "price": 2159,
+          "category": "treadmill",
+          "id": 38,
+          "delivery": "",
+          "deliveryicon": ""
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/ffg0b4na-500x500.jpg",
+          "title": "Cross Trainer EH-400",
+          "price": 1499,
+          "category": "crosstrainer",
+          "id": 41,
+          "delivery": "",
+          "deliveryicon": ""
+        },
+        {
+          "img": "https://p.rmjo.in/productSquare/8xvc6k5r-500x500.jpg",
+          "title": "Auto Inclination Treadmill TM-33",
+          "price": 2349,
+          "category": "treadmill",
+          "id": 39,
+          "delivery": "",
+          "deliveryicon": ""
+        }
+      ]
+}
