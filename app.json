@@ -4,10 +4,10 @@
     "slug": "NativeRentDoMajaLo",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/rentdo.jpg",
+    "icon": "./assets/rentdo.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/rentdo.jpg",
+      "image": "./assets/rentdo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
