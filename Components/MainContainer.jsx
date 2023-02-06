@@ -10,11 +10,13 @@ import SettingScreen from "../Navigation/Screens/Setting";
 import ProductsScreen from "../Navigation/Screens/ProductsScreen";
 import SingleProductScreen from "../Navigation/Screens/SingleProductScreen";
 import SignupScreen from "../Navigation/Screens/SignupScreen";
+import SearchScreen from "../Navigation/Screens/SearchScreen";
 
 //screns name
 const homeName = "Home";
 const settingName = "Setting";
 const productsName="Products"
+const searchName="Search"
 
 const Tab = createBottomTabNavigator();
 
@@ -33,6 +35,8 @@ const MainContainer = () => {
                 iconName=focuesd?"settings":"settings"
             }else if(rn==productsName){
               iconName=focuesd?"laptop":"laptop"
+            }else if(rn==searchName){
+              iconName=focuesd?"search":"search"
             }
             return <Ionicons name={iconName} size={size} color={color} />
         }, })}
@@ -47,7 +51,10 @@ const MainContainer = () => {
         <Tab.Screen name={homeName} component={HomeScreen} />
         {/* <Tab.Screen name={settingName} component={SettingScreen} /> */}
         {/* <Tab.Screen name="SingleProduct" component={SingleProductScreen} /> */}
+        <Tab.Screen name={searchName} component={SearchScreen} />
         <Tab.Screen name={productsName} component={ProductsScreen} />
+      
+
         {/* <Tab.Screen name="SignupScreen" component={SignupScreen} /> */}
       </Tab.Navigator>
 

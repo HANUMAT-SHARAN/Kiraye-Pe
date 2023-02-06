@@ -1,21 +1,117 @@
-import { View, Text, Button } from 'react-native'
-import React from 'react'
+import {
+  View,
+  Text,
+  Button,
+  FlatList,
+  StyleSheet,
+  Image,
+  ScrollView,
+} from "react-native";
+import React from "react";
 
-const HomeScreen = ({navigation,route}) => {
-
- 
+const HomeScreen = ({ navigation, route }) => {
+  let category = [
+    {
+      img: `https://cdn0.iconfinder.com/data/icons/interior-design-flat/340/bedroom_room_interior_home_bed_furniture_lamp_house_pillows-256.png`,
+      id: 1,
+      name: "Bedroom",
+    },
+    {
+      img: `https://cdn3.iconfinder.com/data/icons/smart-phone-flat/58/Smart_Phones_-_Flat_-_019_-_Notifications-512.png`,
+      id: 2,
+      name: "Electronics",
+    },
+    {
+      img: `https://cdn1.iconfinder.com/data/icons/recreation-and-hobbies-2/100/28-256.png`,
+      id: 3,
+      name: "Fitness",
+    },
+    {
+      img: `https://cdn1.iconfinder.com/data/icons/back-to-school-illustrathin/128/study-desk-learning-table-256.png`,
+      id: 4,
+      name: "WFM",
+    },
+  ];
+  let homeImages = [
+    { img: `https://s.rmjo.in/Fitness-offer-banner-for-Web--2.jpg`, id: 1 },
+    { img: `https://s.rmjo.in/Paytm-Bank-Desktop-banner-%20(1).jpg`, id: 2 },
+  ];
   return (
-    <View>
-      
-      <Button title="GOT to Setting" onPress={()=>navigation.navigate("Setting",{
-        id:"Hanumat"
-      })} />
-       <Button title="GOT to Products" onPress={()=>navigation.navigate("Products",{
-        id:"Hanumat"
-      })} />
+    <ScrollView>
+      {/* c*/}
+      <Text>Home</Text>
 
-    </View>
-  )
-}
+      <FlatList
+        horizontal
+        data={homeImages}
+        renderItem={({ item }) => (
+          <Image style={styles.image} source={{ uri: item.img }} />
+        )}
+      />
+      <View style={[styles.categoryDiv, styles.elevation]}>
+        <Image
+          style={styles.categoryImg}
+          source={{
+            uri: `https://cdn1.iconfinder.com/data/icons/recreation-and-hobbies-2/100/28-256.png`,
+          }}
+        />
+        <Text style={styles.catText}>Fitness</Text>
+      </View>
+      <FlatList
+        data={category}
+        renderItem={({ item }) => (
+          <View style={[styles.categoryDiv, styles.shadowProp]}>
+            <Image
+              style={styles.categoryImg}
+              source={{
+                uri: item.img,
+              }}
+            />
+            <Text style={styles.catText}>{item.name}</Text>
+          </View>
+        )}
+        numColumns={2}
+      />
+    </ScrollView>
+  );
+};
 
-export default HomeScreen
+export default HomeScreen;
+
+const styles = StyleSheet.create({
+  image: {
+    width: 320,
+    height: 320,
+    elevation: 20,
+    margin: 20,
+  },
+  parentDiv: {
+    display: "grid",
+  },
+
+  categoryDiv: {
+    alignItems: "center",
+    margin: 20,
+    width: "40%",
+    elevation: 4,
+  },
+  categoryImg: {
+    width: 40,
+    height: 40,
+  },
+  catText: {
+    fontSize: 15,
+    marginTop: 10,
+    fontWeight: "bold",
+  },
+  shadowProp: {
+    shadowOffset: { width: -2, height: 4 },
+    shadowColor: "#171717",
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+  },
+  elevation: {
+    elevation: 20,
+    shadowColor: "#52006A",
+  },
+});
