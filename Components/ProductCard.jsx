@@ -2,10 +2,15 @@ import { Button, Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 
-const ProductCard = ({ img, title, price ,id}) => {
+const ProductCard = ({ img, title, price, id }) => {
   const navigation = useNavigation();
   return (
-    <View onTouchEndCapture={()=> navigation.navigate("SingleProduct", { title: title,id:id })} style={Card.box}>
+    <View
+      onTouchEndCapture={() =>
+        navigation.navigate("SingleProduct", { title: title, id: id })
+      }
+      style={Card.box}
+    >
       <Image style={Card.image} source={{ uri: img }} />
       <View style={Card.details}>
         <View style={Card.mini}>
@@ -31,13 +36,12 @@ const ProductCard = ({ img, title, price ,id}) => {
         <View style={Card.mini}>
           <Button
             onPress={() =>
-              navigation.navigate("SingleProduct", { title: title,id:id })
+              navigation.navigate("SingleProduct", { title: title, id: id })
             }
             style={Card.button}
             title="View Detail"
             color={"red"}
           />
-         
         </View>
       </View>
     </View>

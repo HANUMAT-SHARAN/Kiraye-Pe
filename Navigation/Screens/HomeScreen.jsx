@@ -8,6 +8,8 @@ import {
   ScrollView,
 } from "react-native";
 import React from "react";
+import Categories from "../../Components/Categories";
+import Filter from "../../Components/Filter";
 
 const HomeScreen = ({ navigation, route }) => {
   let category = [
@@ -38,8 +40,8 @@ const HomeScreen = ({ navigation, route }) => {
   ];
   return (
     <ScrollView>
-      {/* c*/}
-      <Text>Home</Text>
+     
+
 
       <FlatList
         horizontal
@@ -48,30 +50,8 @@ const HomeScreen = ({ navigation, route }) => {
           <Image style={styles.image} source={{ uri: item.img }} />
         )}
       />
-      <View style={[styles.categoryDiv, styles.elevation]}>
-        <Image
-          style={styles.categoryImg}
-          source={{
-            uri: `https://cdn1.iconfinder.com/data/icons/recreation-and-hobbies-2/100/28-256.png`,
-          }}
-        />
-        <Text style={styles.catText}>Fitness</Text>
-      </View>
-      <FlatList
-        data={category}
-        renderItem={({ item }) => (
-          <View style={[styles.categoryDiv, styles.shadowProp]}>
-            <Image
-              style={styles.categoryImg}
-              source={{
-                uri: item.img,
-              }}
-            />
-            <Text style={styles.catText}>{item.name}</Text>
-          </View>
-        )}
-        numColumns={2}
-      />
+      <Categories/>
+     <Filter/>
     </ScrollView>
   );
 };
@@ -114,4 +94,8 @@ const styles = StyleSheet.create({
     elevation: 20,
     shadowColor: "#52006A",
   },
+  catParent:{
+display:"flex",
+flexDirection:"row"
+  }
 });

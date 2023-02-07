@@ -3,6 +3,7 @@ import React from 'react'
 import { Input } from '@rneui/themed'
 import { SearchBarAndroid } from '@rneui/base/dist/SearchBar/SearchBar-android'
 import ProductCard from '../../Components/ProductCard'
+import Categories from '../../Components/Categories'
 
 const SearchScreen = () => {
     const [search, setSearch] = React.useState("");
@@ -25,6 +26,7 @@ const updateSearch = (search) => {
       <SearchBarAndroid  placeholder="Type Here..." loading  onChangeText={updateSearch}
       value={search} />
         {data&&data.map((el)=><ProductCard key={el.id} {...el} />)}
+        <Categories/>
     </ScrollView>
   )
 }
