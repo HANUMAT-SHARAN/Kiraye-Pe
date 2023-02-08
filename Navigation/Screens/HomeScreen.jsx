@@ -51,7 +51,7 @@ const HomeScreen = ({ navigation, route }) => {
         )}
       />
       <Categories/>
-     <Filter/>
+     {/* <Filter/> */}
     </ScrollView>
   );
 };
