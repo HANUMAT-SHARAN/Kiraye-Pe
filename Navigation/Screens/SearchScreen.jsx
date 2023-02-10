@@ -15,14 +15,25 @@ const SearchScreen = () => {
        setData(res)
 
     }
-
+let id;
 const updateSearch = (search) => {
-  setSearch(search);
-  getData()
+  setSearch(search)
 };
+
+React.useEffect(()=>{
+  if(id){
+    clearTimeout()
+  }
+   id=setTimeout(()=>{
+   
+    getData()
+  },7000)
+  // getData()
+
+},[search])
   return (
     <ScrollView>
-      <Text>SearchScreen</Text>
+    
       <SearchBarAndroid  placeholder="Type Here..." loading  onChangeText={updateSearch}
       value={search} />
         {data&&data.map((el)=><ProductCard key={el.id} {...el} />)}

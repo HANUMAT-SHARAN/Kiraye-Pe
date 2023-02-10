@@ -10,6 +10,9 @@ import ElectronicsScreen from "./Navigation/Screens/ElectronicsScreen";
 import { Button, SearchBar } from "@rneui/themed";
 import Categories from "./Components/Categories";
 import { Filter } from "./Navigation/Screens/ElectronicsScreen";
+import FurnitureScreen from "./Navigation/Screens/FurnitureScreen";
+import FitnessScreen from "./Navigation/Screens/FitnessScreen";
+import WorkFromHomeScreen from "./Navigation/Screens/WorkFromHome";
 /* options={{
            
             headerTitle: () => (
@@ -32,11 +35,43 @@ export default function App() {
           name="Electronics"
           options={{
            
-            headerStyle: { height: 150 },
+            headerStyle: { height: 130 },
             
            
           }}
           component={ElectronicsScreen}
+        />
+         <Stack.Screen
+          name="Furniture"
+          options={{
+           
+            headerStyle: { height: 130 },
+            
+           
+          }}
+          component={FurnitureScreen}
+        />
+        <Stack.Screen
+          name="Fitness"
+          options={{
+           
+            headerStyle: { height: 130 },
+            
+           
+          }}
+          component={FitnessScreen
+          }
+        />
+         <Stack.Screen
+          name="WorkfromHome"
+          options={{
+           
+            headerStyle: { height: 130 },
+            
+           
+          }}
+          component={WorkFromHomeScreen
+          }
         />
       </Stack.Navigator>
     </NavigationContainer>

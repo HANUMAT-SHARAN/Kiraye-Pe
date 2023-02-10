@@ -3,38 +3,6 @@ import React from "react";
 import { Avatar } from "@rneui/themed";
 import ProductCard from "../../Components/ProductCard";
 
-// export const Filter = () => {
-
-//   return (
-//     <View style={styles.parentDiv}>
-//       <View onTouchEndCapture={()=>setCat("smartphones")} style={styles.filterDiv}>
-//       <Avatar
-//     size={72}
-//     rounded
-//     source={{ uri: "https://p.rmjo.in/productSquare/mxzy0xf9-500x500.jpg" }}
-//   />
-//   <Text style={{fontSize:10,marginTop:5}}>SmartPhones</Text>
-//       </View>
-//       <View style={styles.filterDiv}>
-//       <Avatar
-//     size={72}
-//     rounded
-//     source={{ uri: "https://p.rmjo.in/productSquare/mxzy0xf9-500x500.jpg" }}
-//   />
-//   <Text style={{fontSize:10,marginTop:5}}>SmartPhones</Text>
-//       </View>
-//        <View style={styles.filterDiv}>
-//       <Avatar
-//     size={72}
-//     rounded
-//     source={{ uri: "https://p.rmjo.in/productSquare/mxzy0xf9-500x500.jpg" }}
-//   />
-//   <Text style={{fontSize:10,marginTop:5,fontWeight:"bold"}}>SmartPhones</Text>
-//       </View>
-//     </View>
-//   )
-// }
-
 const styles = StyleSheet.create({
   parentDiv: {
     marginTop: 10,
@@ -66,8 +34,8 @@ const styles = StyleSheet.create({
   },
   
 });
-const ElectronicsScreen = ({ route, navigation }) => {
-  const [cat, setCat] = React.useState("laptop");
+const WorkFromHomeScreen = ({ route, navigation }) => {
+  const [cat, setCat] = React.useState("wfm");
   const [data, setData] = React.useState([]);
   const getProductsData = async () => {
     try {
@@ -92,32 +60,32 @@ const ElectronicsScreen = ({ route, navigation }) => {
       headerTitle: () => (
         <View style={styles.parentDiv}>
           <View
-            onTouchEndCapture={() => setCat("smartphone")}
+            onTouchEndCapture={() => setCat("wfm")}
             style={styles.filterDiv}
           >
-            <View style={cat == "smartphone" ? styles.activeImage : styles.activeImage}>
+            <View style={cat == "wfm" ? styles.activeImage : styles.activeImage}>
               <Avatar
                 size={62}
                 rounded
                 source={{
-                  uri: "https://p.rmjo.in/productSquare/mxzy0xf9-500x500.jpg",
+                  uri: "https://p.rmjo.in/productSquare/qu9y4szh-500x500.jpg",
                 }}
               />
             </View>
             <Text style={{ fontSize: 10, marginTop: 5, fontWeight: "bold" }}>
-              Smart Phones
+              Chair
             </Text>
           </View>
           <View
-            onTouchEndCapture={() => setCat("laptop")}
+            onTouchEndCapture={() => setCat("treadmill")}
             style={styles.filterDiv}
           >
-           <View style={cat == "laptop" ? styles.activeImage : styles.activeImage} >
+           <View style={cat == "treadmill" ? styles.activeImage : styles.activeImage} >
            <Avatar
               size={62}
               rounded
               source={{
-                uri: "https://p.rmjo.in/productSquare/hyob6tn7-500x500.jpg",
+                uri: "https://p.rmjo.in/productSquare/b8g0ufr1-500x500.jpg",
               }}
             />
            </View>
@@ -129,36 +97,36 @@ const ElectronicsScreen = ({ route, navigation }) => {
                 fontWeight: "bold",
               }}
             >
-              Laptops
+              Tread Mills
             </Text>
           </View>
           <View
-            onTouchEndCapture={() => setCat("smartdevices")}
+            onTouchEndCapture={() => setCat("cycle")}
             style={styles.filterDiv}
           >
-           <View style={cat == "smartdevices" ? styles.activeImage : styles.activeImage}>
+           <View style={cat == "cycle" ? styles.activeImage : styles.activeImage}>
            <Avatar
               size={62}
               rounded
               source={{
-                uri: "https://p.rmjo.in/productSquare/wph9nyr6-500x500.jpg",
+                uri: "https://p.rmjo.in/productSquare/5319tgr7-500x500.jpg",
               }}
             />
            </View>
             <Text style={{ fontSize: 10, marginTop: 5, fontWeight: "bold" }}>
-              Smart Devices
+              Exercise Cycle
             </Text>
           </View>
           <View
-            onTouchEndCapture={() => setCat("tablets")}
+            onTouchEndCapture={() => setCat("massager")}
             style={styles.filterDiv}
           >
-           <View style={cat == "tablets" ? styles.activeImage : styles.activeImage}>
+           <View style={cat == "massager" ? styles.activeImage : styles.activeImage}>
            <Avatar
               size={62}
               rounded
               source={{
-                uri: "https://p.rmjo.in/productSquare/dvlj6ic5-500x500.jpg",
+                uri: "https://p.rmjo.in/productSquare/niqfc8xs-500x500.jpg",
               }}
             />
            </View>
@@ -170,7 +138,7 @@ const ElectronicsScreen = ({ route, navigation }) => {
                 fontWeight: "bold",
               }}
             >
-              Tablets
+              Massagers
             </Text>
           </View>
         </View>
@@ -183,7 +151,7 @@ const ElectronicsScreen = ({ route, navigation }) => {
   );
 };
 
-export default ElectronicsScreen;
+export default WorkFromHomeScreen;
 
 // const styles = StyleSheet.create({
 //   parentDiv:{

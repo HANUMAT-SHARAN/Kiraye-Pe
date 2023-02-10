@@ -8,11 +8,11 @@ const Categories = () => {
   return (
     <View>
       <View style={styles.catParent}>
-        <View
+        <View 
           onTouchEndCapture={() =>
             navigation.navigate("Electronics", { category: "laptops" })
           }
-          style={[styles.categoryDiv, styles.elevation]}
+          style={[styles.categoryDiv,styles.activeImage]}
         >
           <Image
             style={styles.categoryImg}
@@ -22,7 +22,9 @@ const Categories = () => {
           />
           <Text style={styles.catText}>Electronics</Text>
         </View>
-        <View style={[styles.categoryDiv, styles.elevation]}>
+        <View   onTouchEndCapture={() =>
+            navigation.navigate("Furniture", { category: "bedroom" })
+          } style={[styles.categoryDiv, styles.activeImage]}>
           <Image
             style={styles.categoryImg}
             source={{
@@ -33,7 +35,9 @@ const Categories = () => {
         </View>
       </View>
       <View style={styles.catParent}>
-        <View style={[styles.categoryDiv, styles.elevation]}>
+        <View onTouchEndCapture={() =>
+            navigation.navigate("Fitness", { category: "treadmill" })
+          }  style={[styles.categoryDiv, styles.activeImage]}>
           <Image
             style={styles.categoryImg}
             source={{
@@ -42,7 +46,9 @@ const Categories = () => {
           />
           <Text style={styles.catText}>Fitness</Text>
         </View>
-        <View style={[styles.categoryDiv, styles.elevation]}>
+        <View onTouchEndCapture={() =>
+            navigation.navigate("WorkfromHome", { category: "wfm" })
+          } style={[styles.categoryDiv, styles.activeImage]}>
           <Image
             style={styles.categoryImg}
             source={{
@@ -62,7 +68,7 @@ const styles = StyleSheet.create({
   image: {
     width: 320,
     height: 320,
-    elevation: 20,
+    elevation: 2,
     margin: 20,
   },
   parentDiv: {
@@ -73,7 +79,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     margin: 20,
     width: "40%",
-    elevation: 4,
+    elevation: 0,
+    padding:10,
   },
   categoryImg: {
     width: 40,
@@ -97,5 +104,11 @@ const styles = StyleSheet.create({
   catParent: {
     display: "flex",
     flexDirection: "row",
+  },
+  activeImage: {
+    borderColor: "crimson",
+    borderStyle: "solid",
+    borderWidth: 4,
+    borderRadius: 20,
   },
 });
