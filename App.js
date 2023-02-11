@@ -13,6 +13,8 @@ import { Filter } from "./Navigation/Screens/ElectronicsScreen";
 import FurnitureScreen from "./Navigation/Screens/FurnitureScreen";
 import FitnessScreen from "./Navigation/Screens/FitnessScreen";
 import WorkFromHomeScreen from "./Navigation/Screens/WorkFromHome";
+import * as eva from '@eva-design/eva';
+import { ApplicationProvider, Layout, } from '@ui-kitten/components'
 /* options={{
            
             headerTitle: () => (
@@ -23,7 +25,8 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+     <ApplicationProvider {...eva} theme={eva.light}>
+     <Stack.Navigator>
         <Stack.Screen
           name="Tab"
           component={MainContainer}
@@ -74,6 +77,7 @@ export default function App() {
           }
         />
       </Stack.Navigator>
+     </ApplicationProvider>
     </NavigationContainer>
   );
 }

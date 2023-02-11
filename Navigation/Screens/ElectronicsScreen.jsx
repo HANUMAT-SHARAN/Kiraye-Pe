@@ -58,13 +58,12 @@ const styles = StyleSheet.create({
     borderWidth: 4,
     borderRadius: 40,
   },
-  notActiveImage:{
+  notActiveImage: {
     borderColor: "green",
     borderStyle: "solid",
     borderWidth: 5,
     borderRadius: 40,
   },
-  
 });
 const ElectronicsScreen = ({ route, navigation }) => {
   const [cat, setCat] = React.useState("laptop");
@@ -76,15 +75,11 @@ const ElectronicsScreen = ({ route, navigation }) => {
       );
       let res = await data.json();
       setData(res);
-      
-    } catch (error) {
-
-    }
+    } catch (error) {}
   };
 
   React.useEffect(() => {
     getProductsData();
-    
   }, [cat]);
 
   React.useEffect(() => {
@@ -95,7 +90,14 @@ const ElectronicsScreen = ({ route, navigation }) => {
             onTouchEndCapture={() => setCat("smartphone")}
             style={styles.filterDiv}
           >
-            <View style={cat == "smartphone" ? styles.activeImage : styles.activeImage}>
+            <View
+              style={{
+                borderColor:"red",
+                borderStyle: "solid",
+                borderWidth: 4,
+                borderRadius: 40,
+              }}
+            >
               <Avatar
                 size={62}
                 rounded
@@ -112,15 +114,17 @@ const ElectronicsScreen = ({ route, navigation }) => {
             onTouchEndCapture={() => setCat("laptop")}
             style={styles.filterDiv}
           >
-           <View style={cat == "laptop" ? styles.activeImage : styles.activeImage} >
-           <Avatar
-              size={62}
-              rounded
-              source={{
-                uri: "https://p.rmjo.in/productSquare/hyob6tn7-500x500.jpg",
-              }}
-            />
-           </View>
+            <View
+              style={cat == "laptop" ? styles.activeImage : styles.activeImage}
+            >
+              <Avatar
+                size={62}
+                rounded
+                source={{
+                  uri: "https://p.rmjo.in/productSquare/hyob6tn7-500x500.jpg",
+                }}
+              />
+            </View>
             <Text
               style={{
                 fontSize: 10,
@@ -136,15 +140,19 @@ const ElectronicsScreen = ({ route, navigation }) => {
             onTouchEndCapture={() => setCat("smartdevices")}
             style={styles.filterDiv}
           >
-           <View style={cat == "smartdevices" ? styles.activeImage : styles.activeImage}>
-           <Avatar
-              size={62}
-              rounded
-              source={{
-                uri: "https://p.rmjo.in/productSquare/wph9nyr6-500x500.jpg",
-              }}
-            />
-           </View>
+            <View
+              style={
+                cat == "smartdevices" ? styles.activeImage : styles.activeImage
+              }
+            >
+              <Avatar
+                size={62}
+                rounded
+                source={{
+                  uri: "https://p.rmjo.in/productSquare/wph9nyr6-500x500.jpg",
+                }}
+              />
+            </View>
             <Text style={{ fontSize: 10, marginTop: 5, fontWeight: "bold" }}>
               Smart Devices
             </Text>
@@ -153,15 +161,17 @@ const ElectronicsScreen = ({ route, navigation }) => {
             onTouchEndCapture={() => setCat("tablets")}
             style={styles.filterDiv}
           >
-           <View style={cat == "tablets" ? styles.activeImage : styles.activeImage}>
-           <Avatar
-              size={62}
-              rounded
-              source={{
-                uri: "https://p.rmjo.in/productSquare/dvlj6ic5-500x500.jpg",
-              }}
-            />
-           </View>
+            <View
+              style={cat == "tablets" ? styles.activeImage : styles.activeImage}
+            >
+              <Avatar
+                size={62}
+                rounded
+                source={{
+                  uri: "https://p.rmjo.in/productSquare/dvlj6ic5-500x500.jpg",
+                }}
+              />
+            </View>
             <Text
               style={{
                 fontSize: 10,
@@ -179,7 +189,9 @@ const ElectronicsScreen = ({ route, navigation }) => {
   }, [navigation]);
 
   return (
-    <ScrollView>{data && data.map((el) => <ProductCard key={el.id} {...el} />)}</ScrollView>
+    <ScrollView>
+      {data && data.map((el) => <ProductCard key={el.id} {...el} />)}
+    </ScrollView>
   );
 };
 

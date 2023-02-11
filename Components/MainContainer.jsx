@@ -17,6 +17,7 @@ const homeName = "Home";
 const settingName = "Setting";
 const productsName="Products"
 const searchName="Search"
+const signupName="SignUP"
 
 const Tab = createBottomTabNavigator();
 
@@ -37,15 +38,18 @@ const MainContainer = () => {
               iconName=focuesd?"laptop":"laptop"
             }else if(rn==searchName){
               iconName=focuesd?"search":"search"
-            }
+            
+          }else if(rn==signupName){
+            iconName=focuesd?"person":"person"
+          }
             return <Ionicons name={iconName} size={size} color={color} />
         }, })}
-        // tabBarOptions={{
-        //     activeTintColor:"red",
-        //     inactiveTintColor:"blue",
-        //     labelStyle:{paddingBottom:10,fontSize:10},
-        //     style:{padding:10,height:70}
-        // }}
+        tabBarOptions={{
+            activeTintColor:"crimson",
+            inactiveTintColor:"blue",
+           
+           
+        }}
       >
 
         <Tab.Screen name={homeName} component={HomeScreen} />
@@ -54,7 +58,7 @@ const MainContainer = () => {
         <Tab.Screen name={searchName} component={SearchScreen} />
         <Tab.Screen name={productsName} component={ProductsScreen} />
       
-
+        <Tab.Screen name={signupName} component={SignupScreen} />
         {/* <Tab.Screen name="SignupScreen" component={SignupScreen} /> */}
       </Tab.Navigator>
 
