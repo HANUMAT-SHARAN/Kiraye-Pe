@@ -2,6 +2,7 @@ import { StyleSheet, Text, View,ScrollView } from "react-native";
 import React from "react";
 import { Avatar } from "@rneui/themed";
 import ProductCard from "../../Components/ProductCard";
+import { Toast } from "react-native-toast-message/lib/src/Toast";
 
 
 
@@ -22,14 +23,28 @@ const styles = StyleSheet.create({
     padding:4,
     margin: 2,
   },
-  activeImage: {
-    borderColor: "red",
-    borderStyle: "solid",
-    borderWidth: 4,
-    borderRadius: 40,
-  },
+ 
+   
+  textCat: {
+    marginLeft:"auto",
+    marginRight:"auto",
+    fontSize: 12,
+    marginTop: 2,
+    fontWeight: "bold",
+    color: "white",
+  }
 });
 const FurnitureScreen = ({ route, navigation }) => {
+  const showSuccess = () => {
+    Toast.show({
+      type: "success",
+      text1: "Category is Updated Succesfully 😎",
+      text2: "Hurray now you can explore more ",
+      position: "top",
+      topOffset: 150,
+      
+    });
+  };
   const [cat, setCat] = React.useState("bedroom");
   const [data, setData] = React.useState([]);
   const getProductsData = async () => {
@@ -44,6 +59,7 @@ const FurnitureScreen = ({ route, navigation }) => {
 
   React.useEffect(() => {
     getProductsData();
+    showSuccess()
   }, [cat]);
 
 
@@ -63,7 +79,7 @@ const FurnitureScreen = ({ route, navigation }) => {
               }}
             /></View>
 
-            <Text style={{ fontSize: 10, marginTop: 5, fontWeight: "bold" }}>
+            <Text style={styles.textCat}>
               Living Room
             </Text>
           </View> 
@@ -79,7 +95,7 @@ const FurnitureScreen = ({ route, navigation }) => {
               }}
             /></View>
            
-            <Text style={{ fontSize: 10, marginTop: 5,marginLeft:10, fontWeight: "bold" }}>
+            <Text style={styles.textCat}>
               Bedroom
             </Text>
           </View> 

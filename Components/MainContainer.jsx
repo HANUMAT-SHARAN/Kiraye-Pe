@@ -2,8 +2,8 @@ import { View, Text } from "react-native";
 import React from "react";
 import { NavigationContainer, TabActions } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Ionicons from "react-native-vector-icons/Ionicons"
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Ionicons from "react-native-vector-icons/Ionicons";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 //Screens
 import HomeScreen from "../Navigation/Screens/HomeScreen";
 import SettingScreen from "../Navigation/Screens/Setting";
@@ -15,56 +15,64 @@ import SearchScreen from "../Navigation/Screens/SearchScreen";
 //screns name
 const homeName = "Home";
 const settingName = "Setting";
-const productsName="Products"
-const searchName="Search"
-const signupName="SignUP"
+const productsName = "Products";
+const searchName = "Search";
+
+import { useSelector } from "react-redux";
+
 
 const Tab = createBottomTabNavigator();
 
 const MainContainer = () => {
+const {count}=useSelector((store)=>store.authManager)
+const signupName = count>12?`${count}`:"Signup";
   return (
     <>
-    {/* <NavigationContainer> */}
+      {/* <NavigationContainer> */}
       <Tab.Navigator
         initialRouteName={homeName}
-        screenOptions={({ route }) => ({ tabBarIcon: ({focuesd,color,size})=>{
-            let iconName;
-            let rn=route.name
-            if(route.name==homeName){
-                iconName=focuesd?"home":"home"
-            }else if(rn==settingName){
-                iconName=focuesd?"settings":"settings"
-            }else if(rn==productsName){
-              iconName=focuesd?"laptop":"laptop"
-            }else if(rn==searchName){
-              iconName=focuesd?"search":"search"
+        screenOptions={({ route }) => ({
+          headerStyle: {
+            backgroundColor: "#8a2df6",
             
-          }else if(rn==signupName){
-            iconName=focuesd?"person":"person"
-          }
-            return <Ionicons name={iconName} size={size} color={color} />
-        }, })}
+          },
+
+       
+          headerTitleAlign: "center",
+          headerTintColor:"white",
+          tabBarIcon: ({ focuesd, color, size }) => {
+            let iconName;
+            let rn = route.name;
+            if (route.name == homeName) {
+              iconName = focuesd ? "home" : "home";
+            } else if (rn == settingName) {
+              iconName = focuesd ? "settings" : "settings";
+            } else if (rn == productsName) {
+              iconName = focuesd ? "laptop" : "laptop";
+            } else if (rn == searchName) {
+              iconName = focuesd ? "search" : "search";
+            } else if (rn == signupName) {
+              iconName = focuesd ? "person" : "person";
+            }
+            return <Ionicons name={iconName} size={size} color={color} />;
+          },
+        })}
         tabBarOptions={{
-            activeTintColor:"crimson",
-            inactiveTintColor:"blue",
-           
-           
+          activeTintColor: "#8a2df6",
+          inactiveTintColor: "red",
         }}
       >
-
         <Tab.Screen name={homeName} component={HomeScreen} />
         {/* <Tab.Screen name={settingName} component={SettingScreen} /> */}
         {/* <Tab.Screen name="SingleProduct" component={SingleProductScreen} /> */}
         <Tab.Screen name={searchName} component={SearchScreen} />
         <Tab.Screen name={productsName} component={ProductsScreen} />
-      
+
         <Tab.Screen name={signupName} component={SignupScreen} />
         {/* <Tab.Screen name="SignupScreen" component={SignupScreen} /> */}
       </Tab.Navigator>
 
-
-  
-    {/* </NavigationContainer> */}
+      {/* </NavigationContainer> */}
     </>
   );
 };

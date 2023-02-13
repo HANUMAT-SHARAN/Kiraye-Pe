@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   activeImage: {
-    borderColor: "crimson",
+    borderColor: "#8a2df6",
     borderStyle: "solid",
     borderWidth: 4,
     borderRadius: 20,

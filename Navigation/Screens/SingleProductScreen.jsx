@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { Button, Slider } from "@rneui/themed";
 import Loader from "../../Components/Loader";
+import { useSelector } from "react-redux";
 
 
 const SingleProductScreen = ({route}) => {
@@ -12,6 +13,7 @@ const SingleProductScreen = ({route}) => {
       const {id}=route.params
       const [data,setData]=useState({})
       const [load,setLoad]=useState(false)
+      const {count}=useSelector((store)=>store.authManager)
 
       const getData=async()=>{
         try {
@@ -92,6 +94,7 @@ const SingleProductScreen = ({route}) => {
       
       </View>
       <View style={styles.addToCartButton}>
+        <Text>{count}</Text>
       <Button size="lg" color="error" title="Add To Cart" type="solid" />
       </View>
     </ScrollView>

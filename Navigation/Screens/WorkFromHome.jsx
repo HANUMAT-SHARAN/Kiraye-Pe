@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, ScrollView } from "react-native";
 import React from "react";
 import { Avatar } from "@rneui/themed";
 import ProductCard from "../../Components/ProductCard";
+import { Toast } from "react-native-toast-message/lib/src/Toast";
 
 const styles = StyleSheet.create({
   parentDiv: {
@@ -9,6 +10,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     textAlign: "center",
+    color: "white",
   },
   filterDiv: {
     display: "flex",
@@ -19,22 +21,28 @@ const styles = StyleSheet.create({
     borderColor: "red",
     padding: 2,
     margin: 2,
+    color: "white",
   },
-  activeImage: {
-    borderColor: "red",
-    borderStyle: "solid",
-    borderWidth: 4,
-    borderRadius: 40,
+ 
+  textCat: {
+    marginLeft:"auto",
+    marginRight:"auto",
+    fontSize: 12,
+    marginTop: 2,
+    fontWeight: "bold",
+    color: "white",
   },
-  notActiveImage:{
-    borderColor: "green",
-    borderStyle: "solid",
-    borderWidth: 5,
-    borderRadius: 40,
-  },
-  
 });
 const WorkFromHomeScreen = ({ route, navigation }) => {
+  const showSuccess = () => {
+    Toast.show({
+      type: "success",
+      text1: "Category is Updated Succesfully 😎",
+      text2: "Hurray now you can explore more ",
+      position: "top",
+      topOffset: 150,
+    });
+  };
   const [cat, setCat] = React.useState("wfm");
   const [data, setData] = React.useState([]);
   const getProductsData = async () => {
@@ -44,15 +52,12 @@ const WorkFromHomeScreen = ({ route, navigation }) => {
       );
       let res = await data.json();
       setData(res);
-      
-    } catch (error) {
-
-    }
+    } catch (error) {}
   };
 
   React.useEffect(() => {
     getProductsData();
-    
+    showSuccess();
   }, [cat]);
 
   React.useEffect(() => {
@@ -63,7 +68,9 @@ const WorkFromHomeScreen = ({ route, navigation }) => {
             onTouchEndCapture={() => setCat("wfm")}
             style={styles.filterDiv}
           >
-            <View style={cat == "wfm" ? styles.activeImage : styles.activeImage}>
+            <View
+              style={cat == "wfm" ? styles.activeImage : styles.activeImage}
+            >
               <Avatar
                 size={62}
                 rounded
@@ -72,74 +79,62 @@ const WorkFromHomeScreen = ({ route, navigation }) => {
                 }}
               />
             </View>
-            <Text style={{ fontSize: 10, marginTop: 5, fontWeight: "bold" }}>
-              Chair
-            </Text>
+            <Text style={styles.textCat}>Chair</Text>
           </View>
           <View
             onTouchEndCapture={() => setCat("treadmill")}
             style={styles.filterDiv}
           >
-           <View style={cat == "treadmill" ? styles.activeImage : styles.activeImage} >
-           <Avatar
-              size={62}
-              rounded
-              source={{
-                uri: "https://p.rmjo.in/productSquare/b8g0ufr1-500x500.jpg",
-              }}
-            />
-           </View>
-            <Text
-              style={{
-                fontSize: 10,
-                marginTop: 5,
-                marginLeft: 10,
-                fontWeight: "bold",
-              }}
+            <View
+              style={
+                cat == "treadmill" ? styles.activeImage : styles.activeImage
+              }
             >
-              Tread Mills
-            </Text>
+              <Avatar
+                size={62}
+                rounded
+                source={{
+                  uri: "https://p.rmjo.in/productSquare/b8g0ufr1-500x500.jpg",
+                }}
+              />
+            </View>
+            <Text style={styles.textCat}>Tread Mills</Text>
           </View>
           <View
             onTouchEndCapture={() => setCat("cycle")}
             style={styles.filterDiv}
           >
-           <View style={cat == "cycle" ? styles.activeImage : styles.activeImage}>
-           <Avatar
-              size={62}
-              rounded
-              source={{
-                uri: "https://p.rmjo.in/productSquare/5319tgr7-500x500.jpg",
-              }}
-            />
-           </View>
-            <Text style={{ fontSize: 10, marginTop: 5, fontWeight: "bold" }}>
-              Exercise Cycle
-            </Text>
+            <View
+              style={cat == "cycle" ? styles.activeImage : styles.activeImage}
+            >
+              <Avatar
+                size={62}
+                rounded
+                source={{
+                  uri: "https://p.rmjo.in/productSquare/5319tgr7-500x500.jpg",
+                }}
+              />
+            </View>
+            <Text style={styles.textCat}>Exercise Cycle</Text>
           </View>
           <View
             onTouchEndCapture={() => setCat("massager")}
             style={styles.filterDiv}
           >
-           <View style={cat == "massager" ? styles.activeImage : styles.activeImage}>
-           <Avatar
-              size={62}
-              rounded
-              source={{
-                uri: "https://p.rmjo.in/productSquare/niqfc8xs-500x500.jpg",
-              }}
-            />
-           </View>
-            <Text
-              style={{
-                fontSize: 10,
-                marginLeft: 10,
-                marginTop: 5,
-                fontWeight: "bold",
-              }}
+            <View
+              style={
+                cat == "massager" ? styles.activeImage : styles.activeImage
+              }
             >
-              Massagers
-            </Text>
+              <Avatar
+                size={62}
+                rounded
+                source={{
+                  uri: "https://p.rmjo.in/productSquare/niqfc8xs-500x500.jpg",
+                }}
+              />
+            </View>
+            <Text style={styles.textCat}>Massagers</Text>
           </View>
         </View>
       ),
@@ -147,7 +142,9 @@ const WorkFromHomeScreen = ({ route, navigation }) => {
   }, [navigation]);
 
   return (
-    <ScrollView>{data && data.map((el) => <ProductCard key={el.id} {...el} />)}</ScrollView>
+    <ScrollView>
+      {data && data.map((el) => <ProductCard key={el.id} {...el} />)}
+    </ScrollView>
   );
 };
 

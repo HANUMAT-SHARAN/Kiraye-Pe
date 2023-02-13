@@ -3,6 +3,7 @@ import React from 'react'
 import ProductCard from '../../Components/ProductCard'
 
 const ProductsScreen = () => {
+  
     const [data,setData]=React.useState([])
     const getData=async()=>{
         try {
