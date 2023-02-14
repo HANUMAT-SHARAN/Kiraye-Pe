@@ -10,13 +10,16 @@ import { Button, Input, Modal, Card, Icon } from "@ui-kitten/components";
 import { EvaIconsPack } from "@ui-kitten/eva-icons";
 import { Toast } from "react-native-toast-message/lib/src/Toast";
 import { useDispatch, useSelector } from "react-redux";
-import { increaseCount } from "../../Redux/auth/authAction";
+import { increaseCount, setLoginedUser } from "../../Redux/auth/authAction";
 
-const SignupScreen = ({ navigation }) => {
+const LoginScreen = ({ navigation }) => {
+     const dispatch = useDispatch();
+  const { count } = useSelector((store) => store.authManager);
   const [visible, setVisible] = React.useState(false);
   const [secure, setSecure] = React.useState(true);
+  const [allUsers, setAllUsersData] = React.useState([]);
   const [userData, setUserData] = React.useState({
-    name: "",
+
     email: "",
     password: "",
   });
@@ -24,7 +27,7 @@ const SignupScreen = ({ navigation }) => {
   const showSuccess = () => {
     Toast.show({
       type: "success",
-      text1: "Account Is Create Succesfully",
+      text1: "Logined Successfully",
       text2: "Hurray Please Login Now👋",
       position: "top",
       topOffset: 100,
@@ -41,38 +44,41 @@ const SignupScreen = ({ navigation }) => {
       onShow: () => console.log("Hello"),
     });
   };
+const checkUser=()=>{
+    for (let i = 0; i <= allUsers.length - 1; i++) {
+        if ( allUsers[i].email === userData.email && allUsers[i].password === userData.password ) {
+          showSuccess();
+          setUserData({email:'',password:""})
+          console.log(allUsers[i])
+          dispatch(setLoginedUser(allUsers[i]))
+          navigation.navigate("Home")
+          return 
+         
+        }
+      }
+}
+  const verifyUser =  () => {
+    getdata();
+    
+   setTimeout(()=>{
+    checkUser()
+   },1500)
+        
+  
+  };
 
-  const handleChange = async () => {
-    if (userData.password.length < 8) {
-      showError();
-      setUserData({
-        name: "",
-        email: "",
-        password: "",
-      });
-      return;
-    }
+  const getdata = async () => {
     try {
       let data = await fetch(
-        `https://rento-mojo-native-server.vercel.app/users`,
-        {
-          method: "POST",
-          body: JSON.stringify(userData),
-          headers: { "Content-Type": "application/json" },
-        }
+        `https://rento-mojo-native-server.vercel.app/users`
       );
+      let res = await data.json();
+      setAllUsersData(res);
     } catch (error) {
       console.log("error ", error);
     }
-    showSuccess();
-    setUserData({
-      name: "",
-      email: "",
-      password: "",
-    });
   };
-  const dispatch = useDispatch();
-  const { count } = useSelector((store) => store.authManager);
+ 
 
   return (
     <>
@@ -95,18 +101,8 @@ const SignupScreen = ({ navigation }) => {
         />
 
         <ScrollView style={styles.Maindiv}>
-          <Text style={styles.mainText}>Sign Up</Text>
+          <Text style={styles.mainText}>Login Now </Text>
           <View>
-            <Text style={[styles.text, styles.common]}>User Name</Text>
-            <Input
-              onChangeText={(text) => setUserData({ ...userData, name: text })}
-              name="name"
-              size="large"
-              style={[styles.common, styles.inputStyle]}
-              placeholder="User Name"
-              status="success"
-              value={userData.name}
-            />
             <Text style={[styles.text, styles.common]}>Email id</Text>
             <Input
               onChangeText={(text) => setUserData({ ...userData, email: text })}
@@ -137,43 +133,45 @@ const SignupScreen = ({ navigation }) => {
             />
 
             <Button
-              onPress={handleChange}
-              appearance="outline"
-              size="large"
-              style={[styles.common, styles.button]}
-              status="control"
-            >
-              Sign Up
-            </Button>
-            <Text style={[styles.loginText]}>Already a User? </Text>
-            <Button
-              onPress={() => navigation.navigate("Login")}
+              onPress={()=>verifyUser()}
+             
               size="large"
               style={[styles.common]}
               status="success"
             >
-              Login now
+              Login
+            </Button>
+            <Text style={[styles.loginText]}>
+              New User Create a new Account?{" "}
+            </Text>
+            <Button
+              onPress={() => navigation.navigate("Signup")}
+              size="large"
+              style={[styles.common]}
+              status="success"
+            >
+              Singup Now
             </Button>
           </View>
         </ScrollView>
-        {/* <Button onPress={() => dispatch(increaseCount(count + 1))}>
+        <Button onPress={() => dispatch(increaseCount(count + 1))}>
           Inc Count
         </Button>
         <Button onPress={() => dispatch(increaseCount(count - 1))}>
           Dec Count
-        </Button> */}
+        </Button>
       </ScrollView>
     </>
   );
 };
 
-export default SignupScreen;
+export default LoginScreen;
 
 const styles = StyleSheet.create({
   Maindiv: {
     width: "85%",
     textAlign: "center",
-    height: 550,
+    height: 500,
     marginLeft: "auto",
     marginRight: "auto",
     marginTop: 10,
@@ -215,7 +213,7 @@ const styles = StyleSheet.create({
   mainText: {
     marginLeft: "auto",
     marginRight: "auto",
-    width: "60%",
+    width: "80%",
     marginTop: 10,
     fontSize: 40,
     fontWeight: "bold",

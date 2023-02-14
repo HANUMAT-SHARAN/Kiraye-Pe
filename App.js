@@ -18,6 +18,7 @@ import { ApplicationProvider, Layout } from "@ui-kitten/components";
 import { Toast } from "react-native-toast-message/lib/src/Toast";
 import { Provider } from "react-redux";
 import { store } from "./Redux/store";
+import LoginScreen from "./Navigation/Screens/LoginScreen";
 /* options={{
            
             headerTitle: () => (
@@ -28,58 +29,65 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <>
-    <Provider store={store}>
-
-  
-      <NavigationContainer>
-        <ApplicationProvider {...eva} theme={eva.light}>
-          <Stack.Navigator>
-            <Stack.Screen
-              name="Tab"
-              component={MainContainer}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-             options={{
-              headerStyle: { backgroundColor:"#8a2df6" },
-              headerTintColor:"white",
-              headerTitleAlign:"center"
-            }}
-              name="SingleProduct"
-              component={SingleProductScreen}
-            />
-            <Stack.Screen
-              name="Electronics"
-              options={{
-                headerStyle: { height: 130,backgroundColor:"#8a2df6" },
-              }}
-              component={ElectronicsScreen}
-            />
-            <Stack.Screen
-              name="Furniture"
-              options={{
-                headerStyle: { height: 130,backgroundColor:"#8a2df6" },
-              }}
-              component={FurnitureScreen}
-            />
-            <Stack.Screen
-              name="Fitness"
-              options={{
-                headerStyle: { height: 130,backgroundColor:"#8a2df6" },
-              }}
-              component={FitnessScreen}
-            />
-            <Stack.Screen
-              name="WorkfromHome"
-              options={{
-                headerStyle: { height: 130,backgroundColor:"#8a2df6" },
-              }}
-              component={WorkFromHomeScreen}
-            />
-          </Stack.Navigator>
-        </ApplicationProvider>
-      </NavigationContainer>
-      <Toast />
+      <Provider store={store}>
+        <NavigationContainer>
+          <ApplicationProvider {...eva} theme={eva.light}>
+            <Stack.Navigator>
+              <Stack.Screen
+                name="Tab"
+                component={MainContainer}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                options={{
+                  headerStyle: { backgroundColor: "#8a2df6" },
+                  headerTintColor: "white",
+                  headerTitleAlign: "center",
+                }}
+                name="SingleProduct"
+                component={SingleProductScreen}
+              />
+              <Stack.Screen
+                name="Electronics"
+                options={{
+                  headerStyle: { height: 130, backgroundColor: "#8a2df6" },
+                }}
+                component={ElectronicsScreen}
+              />
+              <Stack.Screen
+                name="Furniture"
+                options={{
+                  headerStyle: { height: 130, backgroundColor: "#8a2df6" },
+                }}
+                component={FurnitureScreen}
+              />
+              <Stack.Screen
+                name="Fitness"
+                options={{
+                  headerStyle: { height: 130, backgroundColor: "#8a2df6" },
+                }}
+                component={FitnessScreen}
+              />
+              <Stack.Screen
+                name="WorkfromHome"
+                options={{
+                  headerStyle: { height: 130, backgroundColor: "#8a2df6" },
+                }}
+                component={WorkFromHomeScreen}
+              />
+              <Stack.Screen
+                name="Login"
+                options={{
+                  headerStyle: { backgroundColor: "#8a2df6" },
+                  headerTintColor: "white",
+                  headerTitleAlign: "center",
+                }}
+                component={LoginScreen}
+              />
+            </Stack.Navigator>
+          </ApplicationProvider>
+        </NavigationContainer>
+        <Toast />
       </Provider>
     </>
   );

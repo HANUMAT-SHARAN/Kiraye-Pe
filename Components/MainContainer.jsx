@@ -24,8 +24,8 @@ import { useSelector } from "react-redux";
 const Tab = createBottomTabNavigator();
 
 const MainContainer = () => {
-const {count}=useSelector((store)=>store.authManager)
-const signupName = count>12?`${count}`:"Signup";
+const {count,currentUser,isAuth}=useSelector((store)=>store.authManager)
+const signupName = isAuth?`${currentUser.name}`:"Signup";
   return (
     <>
       {/* <NavigationContainer> */}

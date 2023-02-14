@@ -40,9 +40,6 @@ const HomeScreen = ({ navigation, route }) => {
   ];
   return (
     <ScrollView>
-     
-
-
       <FlatList
         horizontal
         data={homeImages}
@@ -50,8 +47,8 @@ const HomeScreen = ({ navigation, route }) => {
           <Image style={styles.image} source={{ uri: item.img }} />
         )}
       />
-      <Categories/>
-     {/* <Filter/> */}
+      <Categories />
+      {/* <Filter/> */}
     </ScrollView>
   );
 };
@@ -94,8 +91,8 @@ const styles = StyleSheet.create({
     elevation: 20,
     shadowColor: "#52006A",
   },
-  catParent:{
-display:"flex",
-flexDirection:"row"
-  }
+  catParent: {
+    display: "flex",
+    flexDirection: "row",
+  },
 });

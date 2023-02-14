@@ -6,7 +6,7 @@ import ProductCard from "../../Components/ProductCard";
 import Categories from "../../Components/Categories";
 
 const SearchScreen = () => {
-  const [search, setSearch] = React.useState("");
+  const [search, setSearch] = React.useState("   f");
 
   const [data, setData] = React.useState();
   const getData = async () => {
@@ -25,22 +25,19 @@ const SearchScreen = () => {
   React.useEffect(() => {
     const id = setTimeout(() => {
       getData();
-    }, 1000);
+    }, 1500);
 
-    return ()=>{
+    return () => {
       clearTimeout(id);
-    } 
+    };
   }, [search]);
   return (
     <>
       <View>
         <SearchBarAndroid
-          placeholder="Type Here..."
-         
+          placeholder="Search for any product"
           onChangeText={updateSearch}
-          value={search}
         />
-       
       </View>
       <ScrollView>
         {data && data.map((el) => <ProductCard key={el.id} {...el} />)}
