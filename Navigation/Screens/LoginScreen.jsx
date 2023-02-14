@@ -37,14 +37,16 @@ const LoginScreen = ({ navigation }) => {
   const showError = () => {
     Toast.show({
       type: "error",
-      text1: "Password Is Too Short",
+      text1: "Wrong Credentials",
       text2: "Try Again With New Password",
       position: "top",
       topOffset: 100,
       onShow: () => console.log("Hello"),
     });
   };
-const checkUser=()=>{
+
+  const verifyUser =  () => {
+ 
     for (let i = 0; i <= allUsers.length - 1; i++) {
         if ( allUsers[i].email === userData.email && allUsers[i].password === userData.password ) {
           showSuccess();
@@ -56,14 +58,9 @@ const checkUser=()=>{
          
         }
       }
-}
-  const verifyUser =  () => {
-    getdata();
-    
-   setTimeout(()=>{
-    checkUser()
-   },1500)
-        
+      showError()
+      setUserData({email:'',password:""})
+      return
   
   };
 
@@ -74,10 +71,15 @@ const checkUser=()=>{
       );
       let res = await data.json();
       setAllUsersData(res);
+      console.log(res)
     } catch (error) {
       console.log("error ", error);
     }
   };
+
+  React.useEffect(()=>{
+    getdata();
+  },[])
  
 
   return (

@@ -61,6 +61,7 @@ const SignupScreen = ({ navigation }) => {
           headers: { "Content-Type": "application/json" },
         }
       );
+
     } catch (error) {
       console.log("error ", error);
     }
@@ -70,6 +71,7 @@ const SignupScreen = ({ navigation }) => {
       email: "",
       password: "",
     });
+    navigation.navigate("Login")
   };
   const dispatch = useDispatch();
   const { count } = useSelector((store) => store.authManager);
