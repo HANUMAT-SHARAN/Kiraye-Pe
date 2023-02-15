@@ -19,6 +19,7 @@ import { Toast } from "react-native-toast-message/lib/src/Toast";
 import { Provider } from "react-redux";
 import { store } from "./Redux/store";
 import LoginScreen from "./Navigation/Screens/LoginScreen";
+import RecentlyWatched from "./Navigation/Screens/RecentlyWatched";
 /* options={{
            
             headerTitle: () => (
@@ -83,6 +84,15 @@ export default function App() {
                   headerTitleAlign: "center",
                 }}
                 component={LoginScreen}
+              />
+              <Stack.Screen
+                name="Recently Watched Products"
+                options={{
+                  headerStyle: { backgroundColor: "#8a2df6" },
+                  headerTintColor: "white",
+                  headerTitleAlign: "center",
+                }}
+                component={RecentlyWatched}
               />
             </Stack.Navigator>
           </ApplicationProvider>

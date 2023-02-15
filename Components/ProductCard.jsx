@@ -1,13 +1,21 @@
 import { Button, Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
+import { useDispatch } from "react-redux";
+import { addInRecentlyWatched } from "../Redux/auth/authAction";
 
 const ProductCard = ({ img, title, price, id }) => {
   const navigation = useNavigation();
+  const dispatch=useDispatch()
+
+  const sendToSingleProduct=()=>{
+    navigation.navigate("SingleProduct", { title: title, id: id })
+    dispatch(addInRecentlyWatched({img,title,price,id}))
+  }
   return (
     <View
       onTouchEndCapture={() =>
-        navigation.navigate("SingleProduct", { title: title, id: id })
+        sendToSingleProduct()
       }
       style={Card.box}
     >

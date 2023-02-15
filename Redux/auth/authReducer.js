@@ -1,4 +1,4 @@
-import { AUTH_LOGIN, INC_COUNT } from "./authActionType"
+import { ADD_IN_RECENTLY_WATCHED, AUTH_LOGIN, AUTH_LOGOUT, INC_COUNT } from "./authActionType"
 
 const initialState={
    currentUser:{
@@ -8,6 +8,7 @@ const initialState={
    },
    count:0,
     isAuth:false,
+    recentlyWatched:[]
 }
 
 export const authReducer=(state=initialState,action)=>{
@@ -25,6 +26,23 @@ export const authReducer=(state=initialState,action)=>{
             return {
                 ...state,
                 count:action.payload
+            }
+        }
+        case AUTH_LOGOUT:{
+            return {
+                ...state,
+                currentUser:{
+                    name:"",
+                    email:'',
+                
+                   },
+                isAuth:false
+            }
+        }
+        case ADD_IN_RECENTLY_WATCHED:{
+            return {
+                ...state,
+                recentlyWatched:[...state.recentlyWatched,action.payload]
             }
         }
          default :{

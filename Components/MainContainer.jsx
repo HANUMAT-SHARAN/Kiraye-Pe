@@ -17,8 +17,10 @@ const homeName = "Home";
 const settingName = "Setting";
 const productsName = "Products";
 const searchName = "Search";
+const cartName="Cart"
 
 import { useSelector } from "react-redux";
+import CartScreen from "../Navigation/Screens/CartScreen";
 
 
 const Tab = createBottomTabNavigator();
@@ -53,6 +55,8 @@ const signupName = isAuth?`${currentUser.name}`:"Signup";
               iconName = focuesd ? "search" : "search";
             } else if (rn == signupName) {
               iconName = focuesd ? "person" : "person";
+            }else if(rn==cartName){
+              iconName = focuesd ? "cart" : "cart";
             }
             return <Ionicons name={iconName} size={size} color={color} />;
           },
@@ -67,6 +71,7 @@ const signupName = isAuth?`${currentUser.name}`:"Signup";
         {/* <Tab.Screen name="SingleProduct" component={SingleProductScreen} /> */}
         <Tab.Screen name={searchName} component={SearchScreen} />
         <Tab.Screen name={productsName} component={ProductsScreen} />
+        <Tab.Screen name={cartName} component={CartScreen} />
 
         <Tab.Screen name={signupName} component={SignupScreen} />
         {/* <Tab.Screen name="SignupScreen" component={SignupScreen} /> */}

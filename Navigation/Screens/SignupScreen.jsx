@@ -10,7 +10,7 @@ import { Button, Input, Modal, Card, Icon } from "@ui-kitten/components";
 import { EvaIconsPack } from "@ui-kitten/eva-icons";
 import { Toast } from "react-native-toast-message/lib/src/Toast";
 import { useDispatch, useSelector } from "react-redux";
-import { increaseCount } from "../../Redux/auth/authAction";
+import { increaseCount, logoutUser } from "../../Redux/auth/authAction";
 
 const SignupScreen = ({ navigation }) => {
   const [visible, setVisible] = React.useState(false);
@@ -21,6 +21,7 @@ const SignupScreen = ({ navigation }) => {
     password: "",
   });
 
+  
   const showSuccess = () => {
     Toast.show({
       type: "success",
@@ -41,13 +42,27 @@ const SignupScreen = ({ navigation }) => {
       onShow: () => console.log("Hello"),
     });
   };
+  const showLogout = () => {
+    Toast.show({
+      type: "error",
+      text1: "Logout Succesfully",
+      text2: "Please Login Now To Continue",
+      position: "top",
+      topOffset: 100,
+      
+    });
+  };
 
+  const logout=()=>{
+    dispatch(logoutUser())
+    showLogout()
+  }
   const handleChange = async () => {
     if (userData.password.length < 8) {
       showError();
       setUserData({
-        name: "",
-        email: "",
+       name:userData.name,
+       email:userData.email,
         password: "",
       });
       return;
@@ -61,7 +76,6 @@ const SignupScreen = ({ navigation }) => {
           headers: { "Content-Type": "application/json" },
         }
       );
-
     } catch (error) {
       console.log("error ", error);
     }
@@ -71,15 +85,126 @@ const SignupScreen = ({ navigation }) => {
       email: "",
       password: "",
     });
-    navigation.navigate("Login")
+    navigation.navigate("Login");
   };
   const dispatch = useDispatch();
-  const { count } = useSelector((store) => store.authManager);
+  const { count, isAuth, currentUser } = useSelector(
+    (store) => store.authManager
+  );
 
   return (
     <>
       <ScrollView style={{ backgroundColor: "#a000ff" }}>
-        <Text style={styles.text}>{count}</Text>
+        {/* //if user is Succesfully authenticated */}
+        {isAuth? <>
+        <View style={styles.backgroundOfName}>
+          <View>
+            <Text style={styles.firstLetter}>{currentUser.name[0]}</Text>
+          </View>
+          <Text style={styles.greet}> Hello 👋 {currentUser.name}</Text>
+          <Button
+            status="danger"
+            onPress={()=>logout()}
+            accessoryRight={<Ionicons color="white" name="power" size={21} />}
+            style={{
+              width: "50%",
+              marginLeft: "auto",
+              marginRight: "auto",
+              marginTop: 15,
+            }}
+          >
+            Logout
+          </Button>
+        </View>
+        <View
+        onTouchEndCapture={()=>navigation.navigate("Recently Watched Products")}
+          style={{
+            width: "95%",
+            marginLeft: "auto",
+            marginRight: "auto",
+            backgroundColor: "white",
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            padding: 10,
+            borderTopLeftRadius: 10,
+            borderBottomRightRadius: 10,
+            borderBottomLeftRadius: 10,
+            borderTopRightRadius: 10,
+            marginTop:10,
+          }}
+        >
+          <Text style={styles.text}>Recently Viewed</Text>
+          <Button
+          onPress={()=>navigation.navigate("Recently Watched Products")}
+            style={{
+              width: "35%",
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
+          >
+            Veiw Now
+          </Button>
+        </View>
+         <View
+          style={{
+            width: "95%",
+            marginLeft: "auto",
+            marginRight: "auto",
+            backgroundColor: "white",
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            padding: 10,
+            borderTopLeftRadius: 10,
+            borderBottomRightRadius: 10,
+            borderBottomLeftRadius: 10,
+            borderTopRightRadius: 10,
+            marginTop:10,
+          }}
+        >
+          <Text style={styles.text}>Recently Viewed</Text>
+          <Button
+            style={{
+              width: "35%",
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
+          >
+            Veiw Now
+          </Button>
+        </View>
+        <View
+          style={{
+            width: "95%",
+            marginLeft: "auto",
+            marginRight: "auto",
+            backgroundColor: "white",
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            padding: 10,
+            borderTopLeftRadius: 10,
+            borderBottomRightRadius: 10,
+            borderBottomLeftRadius: 10,
+            borderTopRightRadius: 10,
+            marginTop:10,
+          }}
+        >
+          <Text style={styles.text}>Recently Viewed</Text>
+          <Button
+            style={{
+              width: "35%",
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
+          >
+            Veiw Now
+          </Button>
+        </View>
+        </>:
+       
+       <>
         <Image
           style={{
             borderTopLeftRadius: 20,
@@ -158,6 +283,9 @@ const SignupScreen = ({ navigation }) => {
             </Button>
           </View>
         </ScrollView>
+        </>
+}
+
         {/* <Button onPress={() => dispatch(increaseCount(count + 1))}>
           Inc Count
         </Button>
@@ -237,5 +365,35 @@ const styles = StyleSheet.create({
     marginRight: "auto",
     marginTop: 10,
     fontSize: 17,
+  },
+  backgroundOfName: {
+    backgroundColor: "#07d1df",
+    height: 300,
+    width: "100%",
+  },
+  firstLetter: {
+    backgroundColor: "#8a14ed",
+    width: "20%",
+    height: 80,
+    fontSize: 50,
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
+    textAlign: "center",
+    marginLeft: "auto",
+    marginRight: "auto",
+    fontWeight: "bold",
+    color: "white",
+    marginTop: 30,
+    padding: 5,
+  },
+  greet: {
+    fontSize: 30,
+    fontWeight: "bold",
+    marginLeft: "auto",
+    marginRight: "auto",
+    color: "white",
+    marginTop: 20,
   },
 });
