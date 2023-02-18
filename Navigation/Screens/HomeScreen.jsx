@@ -10,6 +10,8 @@ import {
 import React from "react";
 import Categories from "../../Components/Categories";
 import Filter from "../../Components/Filter";
+import RentingFaqs from "../../Components/RentingFaqs";
+import HomeProductSlider from "../../Components/HomeProductSlider";
 
 const HomeScreen = ({ navigation, route }) => {
   let category = [
@@ -49,6 +51,10 @@ const HomeScreen = ({ navigation, route }) => {
       />
       <Categories />
       {/* <Filter/> */}
+      <Text style={styles.catText}>There is  More To Renting !</Text>
+      <RentingFaqs/>
+      <Text style={styles.catText}>You Would Love to Get This at Home !</Text>
+      <HomeProductSlider/>
     </ScrollView>
   );
 };
@@ -77,9 +83,10 @@ const styles = StyleSheet.create({
     height: 40,
   },
   catText: {
-    fontSize: 15,
-    marginTop: 10,
+    fontSize: 20,
+    margin: 20,
     fontWeight: "bold",
+    marginLeft: "auto", marginRight: "auto",
   },
   shadowProp: {
     shadowOffset: { width: -2, height: 4 },

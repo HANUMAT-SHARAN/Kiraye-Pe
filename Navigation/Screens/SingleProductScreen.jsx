@@ -7,13 +7,24 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { addProductIncart } from "../../Redux/cart/cartAction";
 
+import { Toast } from "react-native-toast-message/lib/src/Toast";
+import Advantages from "../../Components/Advantages";
+
 const SingleProductScreen = ({ route }) => {
   const [value, setValue] = useState(8);
   const { id } = route.params;
   const [data, setData] = useState({});
   const [load, setLoad] = useState(false);
-  const { count, currentUser } = useSelector((store) => store.authManager);
-
+  const { count, currentUser,isAuth } = useSelector((store) => store.authManager);
+  const alert = () => {
+    Toast.show({
+      type: "success",
+      text1: "Product Added To Cart Succesfully",
+      text2: "Show More Now",
+      position: "top",
+      topOffset: 100,
+    });
+  };
   const dispatch = useDispatch();
   const { title, img, price, deliveryicon } = data;
   const getData = async () => {
@@ -31,18 +42,21 @@ const SingleProductScreen = ({ route }) => {
   const sendData = async (data) => {
     dispatch(addProductIncart(data));
     console.log(currentUser);
-
+    alert()
     try {
       console.log(data);
-      let product=data
-      product.q=1
-      let sendObj = { email: currentUser.email ,product};
+      let product = data
+      product.q = 1
+      let sendObj = { email: currentUser.email, product };
       console.log(sendObj)
-     await fetch(`https://rento-mojo-native-server.vercel.app/cartarr`,{
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body:JSON.stringify(sendObj)
-     })
+      const d = await fetch(`https://rento-mojo-native-server.vercel.app/cartarr`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(sendObj)
+      })
+      const res = await d.json()
+     
+      
     } catch (error) {
       console.log("error ", error);
     }
@@ -114,8 +128,9 @@ const SingleProductScreen = ({ route }) => {
         </View>
       </View>
       <View style={styles.addToCartButton}>
-        <Text>{count}</Text>
+        
         <Button
+        disabled={!isAuth}
           onPress={() => sendData(data)}
           size="lg"
           color="error"
@@ -123,6 +138,7 @@ const SingleProductScreen = ({ route }) => {
           type="solid"
         />
       </View>
+      <Advantages />
     </ScrollView>
   );
 };

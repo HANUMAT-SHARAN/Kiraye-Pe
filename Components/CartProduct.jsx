@@ -3,6 +3,7 @@ import React from "react";
 import { Button } from "@ui-kitten/components";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { useDispatch, useSelector } from "react-redux";
+import { Toast } from "react-native-toast-message/lib/src/Toast";
 import {
   decQuantity,
   deleteProduct,
@@ -10,28 +11,17 @@ import {
   updateQuantity,
 } from "../Redux/cart/cartAction";
 
-const CartProduct = ({ id, product }) => {
+const CartProduct = ({ id, product, removeproduct, increaseQuantity, decreaseQuantity }) => {
   const [count, setCount] = React.useState(1);
-  const [productPrice, setNewProductPrice] = React.useState(data.price);
+  const [productPrice, setNewProductPrice] = React.useState(product.price);
   const { currentUser, isAuth, recentlyWatched, cart, totalPrice } =
     useSelector((store) => store.authManager);
+
+
   const dispatch = useDispatch();
-  const increaseQuatity = async () => {
-    setCount(count + 1);
-  };
-  const decreaseQuantity = () => {
-    setCount(count - 1);
-  };
-  const removeproduct = async (id) => {
-    console.log(id);
-    try {
-      await fetch(`https://rento-mojo-native-server.vercel.app/cartarr/${id}`, {
-        method: "DELETE",
-      });
-    } catch (error) {
-      console.log("error ", error);
-    }
-  };
+
+  
+
   return (
     <>
       <View style={styles.mainDiv}>
@@ -53,13 +43,13 @@ const CartProduct = ({ id, product }) => {
           </Button>
         </View>
         <View style={styles.quantity}>
-          <Button onPress={() => increaseQuatity()} style={[styles.btn]}>
+          <Button disabled={product.q == 5} onPress={() => [increaseQuantity(product.id, id), setCount(count + 1)]} style={[styles.btn]}>
             +
           </Button>
           <Button style={[styles.btn]}>{product.q}</Button>
           <Button
-            disabled={count == 1}
-            onPress={() => decreaseQuantity(id)}
+            disabled={product.q == 1}
+            onPress={() => [decreaseQuantity(product.id, id)]}
             style={[styles.btn]}
           >
             -
@@ -113,7 +103,9 @@ const styles = StyleSheet.create({
     // width: "20%",
     // height: 10,
   },
-  btn: {},
+  btn: {
+    backgroundColor:"blue"
+  },
   title: {
     width: "50%",
     fontSize: 13,

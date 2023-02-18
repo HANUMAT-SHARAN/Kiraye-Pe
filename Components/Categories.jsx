@@ -81,6 +81,7 @@ const styles = StyleSheet.create({
     width: "40%",
     elevation: 0,
     padding:10,
+    backgroundColor:"white"
   },
   categoryImg: {
     width: 40,

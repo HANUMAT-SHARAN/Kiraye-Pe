@@ -148,21 +148,7 @@ const SignupScreen = ({ navigation }) => {
               onTouchEndCapture={() =>
                 navigation.navigate("Recently Watched Products")
               }
-              style={{
-                width: "95%",
-                marginLeft: "auto",
-                marginRight: "auto",
-                backgroundColor: "white",
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                padding: 10,
-                borderTopLeftRadius: 10,
-                borderBottomRightRadius: 10,
-                borderBottomLeftRadius: 10,
-                borderTopRightRadius: 10,
-                marginTop: 10,
-              }}
+              style={styles.recentlyDiv}
             >
               <Text style={styles.text}>Recently Viewed</Text>
               <Button
@@ -173,65 +159,11 @@ const SignupScreen = ({ navigation }) => {
                   marginRight: "auto",
                 }}
               >
-                Veiw Now
+                View Now
               </Button>
             </View>
-            <View
-              style={{
-                width: "95%",
-                marginLeft: "auto",
-                marginRight: "auto",
-                backgroundColor: "white",
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                padding: 10,
-                borderTopLeftRadius: 10,
-                borderBottomRightRadius: 10,
-                borderBottomLeftRadius: 10,
-                borderTopRightRadius: 10,
-                marginTop: 10,
-              }}
-            >
-              <Text style={styles.text}>Recently Viewed</Text>
-              <Button
-                style={{
-                  width: "35%",
-                  marginLeft: "auto",
-                  marginRight: "auto",
-                }}
-              >
-                Veiw Now
-              </Button>
-            </View>
-            <View
-              style={{
-                width: "95%",
-                marginLeft: "auto",
-                marginRight: "auto",
-                backgroundColor: "white",
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                padding: 10,
-                borderTopLeftRadius: 10,
-                borderBottomRightRadius: 10,
-                borderBottomLeftRadius: 10,
-                borderTopRightRadius: 10,
-                marginTop: 10,
-              }}
-            >
-              <Text style={styles.text}>Recently Viewed</Text>
-              <Button
-                style={{
-                  width: "35%",
-                  marginLeft: "auto",
-                  marginRight: "auto",
-                }}
-              >
-                Veiw Now
-              </Button>
-            </View>
+            
+            
           </>
         ) : (
           <>
@@ -429,5 +361,21 @@ const styles = StyleSheet.create({
     marginRight: "auto",
     color: "white",
     marginTop: 20,
-  },
+  },recentlyDiv:{
+
+                width: "95%",
+                marginLeft: "auto",
+                marginRight: "auto",
+                backgroundColor: "white",
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                padding: 10,
+                borderTopLeftRadius: 10,
+                borderBottomRightRadius: 10,
+                borderBottomLeftRadius: 10,
+                borderTopRightRadius: 10,
+                marginTop: 10,
+              
+  }
 });
