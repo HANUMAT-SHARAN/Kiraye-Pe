@@ -35,7 +35,7 @@ const signupName = isAuth?`${currentUser.name}`:"Signup";
         initialRouteName={homeName}
         screenOptions={({ route }) => ({
           headerStyle: {
-            backgroundColor: "#8a2df6",
+            backgroundColor: "#5854e8",
             
           },
 
@@ -62,7 +62,7 @@ const signupName = isAuth?`${currentUser.name}`:"Signup";
           },
         })}
         tabBarOptions={{
-          activeTintColor: "#8a2df6",
+          activeTintColor: "#5854e8",
           inactiveTintColor: "red",
         }}
       >

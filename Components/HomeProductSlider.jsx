@@ -64,7 +64,7 @@ const HomeProductSlider = () => {
   return (
    <>
   
-   <FlatList data={data} horizontal renderItem={({item})=> <View 
+   <FlatList data={data} showsHorizontalScrollIndicator={false} horizontal renderItem={({item})=> <View 
    onTouchEndCapture={()=>navigation.navigate("SingleProduct",{id:item.id})} style={styles.sliderDiv}>
     <Image style={styles.img} source={{uri:item.img}} />
     <Text style={styles.catText}>{item.title}</Text>
@@ -80,10 +80,15 @@ export default HomeProductSlider
 const styles = StyleSheet.create({
     sliderDiv:{
         backgroundColor:"white",
-        padding:10,borderBottomLeftRadius:10,
-        borderTopLeftRadius:10,
-        borderTopRightRadius:10,
-        borderBottomRightRadius:10,
+        padding:10,borderBottomLeftRadius:20,
+        borderTopLeftRadius:5,
+        borderTopRightRadius:20,
+        borderBottomRightRadius:5,
+        padding: 5,
+        borderWidth: 1,
+    margin:5,
+        padding: 10,
+        borderColor: `#c6c9cb`,
 
     },
     img:{

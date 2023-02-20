@@ -7,13 +7,17 @@ import {
   Image,
   ScrollView,
 } from "react-native";
+import {Dimensions} from 'react-native';
 import React from "react";
 import Categories from "../../Components/Categories";
 import Filter from "../../Components/Filter";
 import RentingFaqs from "../../Components/RentingFaqs";
 import HomeProductSlider from "../../Components/HomeProductSlider";
+import Advantages from "../../Components/Advantages";
 
 const HomeScreen = ({ navigation, route }) => {
+  const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
   let category = [
     {
       img: `https://cdn0.iconfinder.com/data/icons/interior-design-flat/340/bedroom_room_interior_home_bed_furniture_lamp_house_pillows-256.png`,
@@ -51,10 +55,11 @@ const HomeScreen = ({ navigation, route }) => {
       />
       <Categories />
       {/* <Filter/> */}
-      <Text style={styles.catText}>There is  More To Renting !</Text>
-      <RentingFaqs/>
-      <Text style={styles.catText}>You Would Love to Get This at Home !</Text>
+      <Text style={styles.catText}>You would love to get this at Home !</Text>
       <HomeProductSlider/>
+      <Text style={styles.catText}>There is  more to renting !</Text>
+      <Advantages/>
+    
     </ScrollView>
   );
 };
@@ -83,10 +88,10 @@ const styles = StyleSheet.create({
     height: 40,
   },
   catText: {
-    fontSize: 20,
+    fontSize: 17,
     margin: 20,
     fontWeight: "bold",
-    marginLeft: "auto", marginRight: "auto",
+    
   },
   shadowProp: {
     shadowOffset: { width: -2, height: 4 },

@@ -40,7 +40,7 @@ const FurnitureScreen = ({ route, navigation }) => {
       type: "success",
       text1: "Category is Updated Succesfully 😎",
       text2: "Hurray now you can explore more ",
-      position: "top",
+      position: "bottom",
       topOffset: 150,
       
     });

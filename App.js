@@ -20,6 +20,7 @@ import { Provider } from "react-redux";
 import { store } from "./Redux/store";
 import LoginScreen from "./Navigation/Screens/LoginScreen";
 import RecentlyWatched from "./Navigation/Screens/RecentlyWatched";
+import CheckoutScreen from "./Navigation/Screens/CheckoutScreen";
 /* options={{
            
             headerTitle: () => (
@@ -41,7 +42,7 @@ export default function App() {
               />
               <Stack.Screen
                 options={{
-                  headerStyle: { backgroundColor: "#8a2df6" },
+                  headerStyle: { backgroundColor: "#5854e8" },
                   headerTintColor: "white",
                   headerTitleAlign: "center",
                 }}
@@ -51,35 +52,35 @@ export default function App() {
               <Stack.Screen
                 name="Electronics"
                 options={{
-                  headerStyle: { height: 130, backgroundColor: "#8a2df6" },
+                  headerStyle: { height: 130, backgroundColor: "#5854e8" },
                 }}
                 component={ElectronicsScreen}
               />
               <Stack.Screen
                 name="Furniture"
                 options={{
-                  headerStyle: { height: 130, backgroundColor: "#8a2df6" },
+                  headerStyle: { height: 130, backgroundColor: "#5854e8" },
                 }}
                 component={FurnitureScreen}
               />
               <Stack.Screen
                 name="Fitness"
                 options={{
-                  headerStyle: { height: 130, backgroundColor: "#8a2df6" },
+                  headerStyle: { height: 130, backgroundColor: "#5854e8" },
                 }}
                 component={FitnessScreen}
               />
               <Stack.Screen
                 name="WorkfromHome"
                 options={{
-                  headerStyle: { height: 130, backgroundColor: "#8a2df6" },
+                  headerStyle: { height: 130, backgroundColor: "#5854e8" },
                 }}
                 component={WorkFromHomeScreen}
               />
               <Stack.Screen
                 name="Login"
                 options={{
-                  headerStyle: { backgroundColor: "#8a2df6" },
+                  headerStyle: { backgroundColor: "#5854e8" },
                   headerTintColor: "white",
                   headerTitleAlign: "center",
                 }}
@@ -88,11 +89,20 @@ export default function App() {
               <Stack.Screen
                 name="Recently Watched Products"
                 options={{
-                  headerStyle: { backgroundColor: "#8a2df6" },
+                  headerStyle: { backgroundColor: "#5854e8" },
                   headerTintColor: "white",
                   headerTitleAlign: "center",
                 }}
                 component={RecentlyWatched}
+              />
+              <Stack.Screen
+                name="Checkout"
+                options={{
+                  headerStyle: { backgroundColor: "#5854e8" },
+                  headerTintColor: "white",
+                  headerTitleAlign: "center",
+                }}
+                component={CheckoutScreen}
               />
             </Stack.Navigator>
           </ApplicationProvider>

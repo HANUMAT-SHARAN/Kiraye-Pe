@@ -8,12 +8,12 @@ const FlatListProducts = ({ data,titleText,redirectto }) => {
     const navigation=useNavigation()
   return (
     <>
-      <View style={styles.topDiv}>
-        <Text style={styles.text}>{titleText}</Text>
-        <Text  onTouchEndCapture={() =>
+      <View onTouchEndCapture={() =>
             navigation.navigate(redirectto, { category: "laptops" })
-          } style={styles.text}>
-          View All <Ionicons name="arrow-forward" color={"black"} size={20} />
+          } style={styles.topDiv}>
+        <Text style={styles.text}>{titleText}</Text>
+        <Text   style={styles.text}>
+          View All <Ionicons name="arrow-forward" color={"white"} size={20} />
         </Text>
       </View>
       <FlatList
@@ -31,7 +31,7 @@ export default FlatListProducts;
 
 const styles = StyleSheet.create({
   topDiv: {
-    width: "90%",
+    width: "95%",
     marginLeft: "auto",
     marginRight: "auto",
     textAlign: "center",
@@ -42,12 +42,16 @@ const styles = StyleSheet.create({
     marginTop: 5,
     marginBottom:5,
     marginTop: 10,
+    backgroundColor:"#5854e8",color:"white",padding:7, borderBottomLeftRadius:10,
+    borderTopLeftRadius:10,
+    borderTopRightRadius:10,
+    borderBottomRightRadius:10,
   },
   text: {
     fontSize: 20,
     marginTop: 5,
     marginBottom:5,
     fontWeight:"bold",
-    color: "#1f2123",
+    color: "white",
   },
 });

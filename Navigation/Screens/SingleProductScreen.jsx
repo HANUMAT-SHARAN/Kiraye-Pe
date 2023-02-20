@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, ScrollView, View } from "react-native";
+import { Image, StyleSheet, Text, ScrollView, View, RefreshControl } from "react-native";
 import React, { useEffect, useState } from "react";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { Button, Slider } from "@rneui/themed";
@@ -15,7 +15,8 @@ const SingleProductScreen = ({ route }) => {
   const { id } = route.params;
   const [data, setData] = useState({});
   const [load, setLoad] = useState(false);
-  const { count, currentUser,isAuth } = useSelector((store) => store.authManager);
+  const [refresh, setRefreshing] = useState(false)
+  const { count, currentUser, isAuth } = useSelector((store) => store.authManager);
   const alert = () => {
     Toast.show({
       type: "success",
@@ -25,9 +26,19 @@ const SingleProductScreen = ({ route }) => {
       topOffset: 100,
     });
   };
+  const showError = () => {
+    Toast.show({
+      type: "error",
+      text1: "Please Login to add product in cart ",
+      text2: "Something went Wrong!",
+      position: "top",
+      topOffset: 100,
+    });
+  };
   const dispatch = useDispatch();
   const { title, img, price, deliveryicon } = data;
   const getData = async () => {
+    setLoad(true);
     try {
       let data = await fetch(
         `https://rento-mojo-native-server.vercel.app/electronics/${id}`
@@ -38,8 +49,13 @@ const SingleProductScreen = ({ route }) => {
     } catch (error) {
       console.log("error ", error);
     }
+    setLoad(false)
   };
   const sendData = async (data) => {
+    if (!isAuth) {
+      showError()
+      return
+    }
     dispatch(addProductIncart(data));
     console.log(currentUser);
     alert()
@@ -55,25 +71,33 @@ const SingleProductScreen = ({ route }) => {
         body: JSON.stringify(sendObj)
       })
       const res = await d.json()
-     
-      
+
+
     } catch (error) {
       console.log("error ", error);
     }
   };
+  const doRefresh = () => {
+
+    setRefreshing(true)
+    setTimeout(() => {
+      setRefreshing(false)
+
+
+    }, 1000)
+    getData();
+  }
 
   useEffect(() => {
-    setLoad(true);
-    setTimeout(() => {
-      setLoad(false);
-    }, 500);
+
+
     getData();
   }, [id]);
   if (load) {
     return <Loader />;
   }
   return (
-    <ScrollView>
+    <ScrollView refreshControl={<RefreshControl onRefresh={doRefresh} refreshing={refresh} />}>
       <Image style={styles.heroImage} source={{ uri: img }} />
       <View style={styles.pricediv}>
         <Text style={styles.priceText}>
@@ -82,7 +106,7 @@ const SingleProductScreen = ({ route }) => {
         </Text>
         <Text style={styles.rfPrice}> ₹ {price * 2} Refundable Deposit</Text>
       </View>
-      <View style={{ backgroundColor: "grey", borderTopLeftRadius: 20 }}>
+      <View style={{ backgroundColor: "#d4e0e9", borderTopLeftRadius: 20 }}>
         <View
           style={{
             display: "flex",
@@ -107,20 +131,23 @@ const SingleProductScreen = ({ route }) => {
         </View>
       </View>
       <View style={styles.sliderDiv}>
-        <Text style={{ fontSize: 20, fontWeight: "bold", padding: 10 }}>
-          {title}
+        <Text style={{ fontSize: 18, fontWeight: "bold", padding: 10, }}>
+       <Ionicons name="star" size={20} />   {title}
         </Text>
+        <Text  style={{ fontSize: 13, fontWeight: "bold", padding: 10,color:"#8c9392" }}>How long you want to rent 
+       this for ? (Months) !</Text>
         <Slider
           animationType="spring"
           allowTouchTrack={true}
           maximumValue={12}
-          minimumValue={4}
+          minimumValue={4}t
           step={4}
           thumbTintColor="red"
           value={value}
           onValueChange={setValue}
           thumbStyle={{ height: 20, width: 16, backgroundColor: "red" }}
         />
+       
         <View style={styles.sliderText}>
           <Text style={{ fontSize: 12, fontWeight: "bold" }}>4+</Text>
           <Text style={{ fontSize: 12, fontWeight: "bold" }}>8+</Text>
@@ -128,11 +155,12 @@ const SingleProductScreen = ({ route }) => {
         </View>
       </View>
       <View style={styles.addToCartButton}>
-        
+
         <Button
-        disabled={!isAuth}
+
           onPress={() => sendData(data)}
           size="lg"
+          style={{ marginLeft: "auto", marginRight: "auto", width: "70%" }}
           color="error"
           title="Add To Cart"
           type="solid"
@@ -158,20 +186,20 @@ const styles = StyleSheet.create({
   },
   pricediv: {
     color: "white",
-    backgroundColor: "black",
+    backgroundColor: "#2b2d2c",
     borderTopStartRadius: 20,
     borderTopLeftRadius: 20,
   },
   priceText: {
     paddingTop: 30,
     color: "white",
-    fontSize: 27,
+    fontSize: 37,
     fontWeight: "bold",
     marginLeft: 10,
   },
   rfPrice: {
     color: "white",
-    fontSize: 14,
+    fontSize: 16,
     paddingTop: 20,
 
     marginLeft: 17,

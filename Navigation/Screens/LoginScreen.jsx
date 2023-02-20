@@ -84,8 +84,8 @@ const LoginScreen = ({ navigation }) => {
 
   return (
     <>
-      <ScrollView style={{ backgroundColor: "#a000ff" }}>
-        <Text style={styles.text}>{count}</Text>
+      <ScrollView style={{ backgroundColor: "#5854e8" }}>
+      
         <Image
           style={{
             borderTopLeftRadius: 20,
@@ -138,8 +138,8 @@ const LoginScreen = ({ navigation }) => {
               onPress={()=>verifyUser()}
              
               size="large"
-              style={[styles.common]}
-              status="success"
+              style={[styles.common,styles.button]}
+             
             >
               Login
             </Button>
@@ -149,19 +149,14 @@ const LoginScreen = ({ navigation }) => {
             <Button
               onPress={() => navigation.navigate("Signup")}
               size="large"
-              style={[styles.common]}
-              status="success"
+              style={[styles.common,styles.button]}
+             
             >
               Singup Now
             </Button>
           </View>
         </ScrollView>
-        <Button onPress={() => dispatch(increaseCount(count + 1))}>
-          Inc Count
-        </Button>
-        <Button onPress={() => dispatch(increaseCount(count - 1))}>
-          Dec Count
-        </Button>
+      
       </ScrollView>
     </>
   );
@@ -191,7 +186,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   button: {
-    backgroundColor: "#a000ff",
+    backgroundColor: "#5854e8",
     color: "white",
 
     marginTop: 10,
@@ -219,7 +214,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     fontSize: 40,
     fontWeight: "bold",
-    backgroundColor: "#a000ff",
+    backgroundColor: "#5854e8",
     color: "white",
     borderBottomLeftRadius: 50,
     borderBottomRightRadius: 10,
@@ -230,10 +225,20 @@ const styles = StyleSheet.create({
     paddingRight: 30,
   },
   loginText: {
-    color: "blue",
+    color: "red",
     marginLeft: "auto",
     marginRight: "auto",
     marginTop: 10,
-    fontSize: 17,
+    fontSize: 15,
+    fontWeight:"bold"
+  },button: {
+  
+    color: "white",
+
+    marginTop: 10,
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
+    borderTopRightRadius: 10,
+    borderTopLeftRadius: 10,
   },
 });

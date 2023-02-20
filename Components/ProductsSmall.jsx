@@ -36,14 +36,15 @@ const styles = StyleSheet.create({
   mainDiv: {
     width: 110,
     height: 150,
- 
-    borderColor:"blue",
-
-    margin:4,
-    borderBottomLeftRadius:10,
-    borderTopLeftRadius:10,
-    borderTopRightRadius:10,
-    borderBottomRightRadius:10,
+    margin:10,
+    
+    borderColor:"#c6c9cb",
+   
+  padding:4,
+  borderBottomLeftRadius:20,
+  borderTopLeftRadius:5,
+  borderTopRightRadius:20,
+  borderBottomRightRadius:5,borderWidth:1,
   },
   text: {
     fontSize: 15,
@@ -52,13 +53,14 @@ const styles = StyleSheet.create({
     marginLeft:"auto",
     marginRight:"auto",
     margin:1,
+    fontWeight:"bold"
   },
   priceText: {
     fontSize: 12,
   margin:1,
     
     color:"#82827b",  marginLeft:"auto",
-    marginRight:"auto"
+    marginRight:"auto",fontWeight:"bold"
 
   },
 });

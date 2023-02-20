@@ -1,16 +1,17 @@
-import { Button, Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { useDispatch } from "react-redux";
 import { addInRecentlyWatched } from "../Redux/auth/authAction";
+import { Button } from "@ui-kitten/components";
 
 const ProductCard = ({ img, title, price, id }) => {
   const navigation = useNavigation();
-  const dispatch=useDispatch()
+  const dispatch = useDispatch()
 
-  const sendToSingleProduct=()=>{
+  const sendToSingleProduct = () => {
     navigation.navigate("SingleProduct", { title: title, id: id })
-    dispatch(addInRecentlyWatched({img,title,price,id}))
+    dispatch(addInRecentlyWatched({ img, title, price, id }))
   }
   return (
     <View
@@ -28,7 +29,7 @@ const ProductCard = ({ img, title, price, id }) => {
               fontWeight: "bold",
               fontSize: 13,
               marginBottom: 5,
-              shadowColor: "red",
+              shadowColor: "red"
             }}
           >
             {title}{" "}
@@ -42,14 +43,14 @@ const ProductCard = ({ img, title, price, id }) => {
           </Text>
         </View>
         <View style={Card.mini}>
-          <Button
-            onPress={() =>
-              navigation.navigate("SingleProduct", { title: title, id: id })
-            }
-            style={Card.button}
+          <Button onPress={() =>
+            navigation.navigate("SingleProduct", { title: title, id: id })
+          }
+            style={{ padding: 5, borderRadius: 5, }}
             title="View Detail"
-            color={"red"}
-          />
+            color={"#5854e8"}>View All </Button>
+
+
         </View>
       </View>
     </View>
@@ -60,10 +61,19 @@ export default ProductCard;
 
 const Card = StyleSheet.create({
   box: {
-    margin: 20,
+    margin: 15,
     borderRadius: 30,
     alignItems: "center",
     textAlign: "center",
+  
+    borderWidth: 5,
+   
+    padding: 10,
+
+    borderColor:`#5854e8`,borderBottomLeftRadius:30,
+    borderTopLeftRadius:5,
+    borderTopRightRadius:30,
+    borderBottomRightRadius:5,
   },
   image: {
     width: "95%",

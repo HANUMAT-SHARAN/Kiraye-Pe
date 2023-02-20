@@ -81,7 +81,10 @@ const styles = StyleSheet.create({
     width: "40%",
     elevation: 0,
     padding:10,
-    backgroundColor:"white"
+    backgroundColor:"white",borderBottomLeftRadius:20,
+    borderTopLeftRadius:5,
+    borderTopRightRadius:20,
+    borderBottomRightRadius:5,
   },
   categoryImg: {
     width: 40,
@@ -107,7 +110,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   activeImage: {
-    borderColor: "#8a2df6",
+    borderColor: "#5854e8",
     borderStyle: "solid",
     borderWidth: 4,
     borderRadius: 20,

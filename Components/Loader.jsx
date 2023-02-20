@@ -4,20 +4,15 @@ import { Skeleton } from '@rneui/themed'
 import { Layout, Spinner } from '@ui-kitten/components';
 const Loader = () => {
   return (
-    <View>
-      <Spinner status='primary'/>
+    <View style={{ marginLeft: "auto", marginRight: "auto" }}>
 
-<Spinner  status='success'/>
 
-<Spinner status='info'/>
+      <View style={{ marginRight: "auto", marginLeft: "auto", marginTop: 20,marginBottom:20 }} ><Spinner size="giant" status='danger' /></View>
 
-<Spinner status='warning'/>
 
-<Spinner status='danger'/>
 
-<Spinner status='basic'/>
-      <Skeleton width={100} height={360} />
-  <Skeleton circle width={200} height={340} />
+      <Skeleton circle width={340} height={600} />
+     
     </View>
   )
 }

@@ -20,7 +20,7 @@ const CartProduct = ({ id, product, removeproduct, increaseQuantity, decreaseQua
 
   const dispatch = useDispatch();
 
-  
+
 
   return (
     <>
@@ -31,17 +31,26 @@ const CartProduct = ({ id, product, removeproduct, increaseQuantity, decreaseQua
             uri: product.img,
           }}
         />
+        <View style={{
+          backgroundColor: "#5854e8", height: 40, width: 70, marginLeft: "auto",
+          marginRight: "auto",borderBottomRightRadius: 3,borderBottomLeftRadius:3,
+        }}></View>
+         <View style={{backgroundColor:"#5854e8",height:15, width: "60%",marginLeft: "auto",
+          marginRight: "auto",borderBottomRightRadius: 5,borderBottomLeftRadius:5, borderTopLeftRadius: 5,
+          borderTopRightRadius: 5,marginBottom:10}}></View>
+        
         <View style={styles.titleDiv}>
           {/* Title and Delete button */}
           <Text style={styles.title}>{product.title}</Text>
           <Button
             onPress={() => removeproduct(id)}
-            style={[styles.common, { fontSize: 20 }]}
-            status="danger"
+            style={[styles.common, { backgroundColor: "red" }]}
+            color={"red"}
           >
             <Ionicons name="trash" size={30} />
           </Button>
         </View>
+        
         <View style={styles.quantity}>
           <Button disabled={product.q == 5} onPress={() => [increaseQuantity(product.id, id), setCount(count + 1)]} style={[styles.btn]}>
             +
@@ -50,7 +59,7 @@ const CartProduct = ({ id, product, removeproduct, increaseQuantity, decreaseQua
           <Button
             disabled={product.q == 1}
             onPress={() => [decreaseQuantity(product.id, id)]}
-            style={[styles.btn]}
+            color="red"
           >
             -
           </Button>
@@ -84,7 +93,10 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 10,
     borderBottomRightRadius: 10,
     marginLeft: "auto",
-    marginRight: "auto",
+    marginRight: "auto", borderWidth: 6,
+
+    padding: 10,
+    borderColor: `#5854e8`,
   },
   mainDiv: {
     marginLeft: "auto",
@@ -94,8 +106,11 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
     borderBottomRightRadius: 10,
-    width: "90%",
+    width: "80%",
 
+    // borderWidth: 3,
+    padding: 10,
+    borderColor: `#5854e8`,
     margin: 5,
     padding: 10,
   },
@@ -104,7 +119,7 @@ const styles = StyleSheet.create({
     // height: 10,
   },
   btn: {
-    backgroundColor:"blue"
+    color: "red"
   },
   title: {
     width: "50%",
@@ -113,6 +128,7 @@ const styles = StyleSheet.create({
     margin: 5,
   },
   titleDiv: {
+    
     display: "flex",
     flexDirection: "row",
     marginLeft: "auto",
@@ -121,24 +137,38 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     margin: 5,
     padding: 5,
+    borderWidth: 2,
+    borderBottomLeftRadius:20,
+    borderTopLeftRadius:5,
+    borderTopRightRadius:20,
+    borderBottomRightRadius:5,
+    padding: 10,
+    borderColor: `#5854e8`,
   },
   quantity: {
-    width: "72%",
+    width: "58%",
     display: "flex",
     flexDirection: "row",
     marginLeft: "auto",
     marginRight: "auto",
     justifyContent: "space-between",
-    padding: 5,
+    padding: 5,margin:5,
   },
   priceDiv: {
-    width: "72%",
+    width: "80%",
     display: "flex",
     flexDirection: "row",
     marginLeft: "auto",
     marginRight: "auto",
-    justifyContent: "space-between",
+    justifyContent: "space-between", borderBottomLeftRadius:20,
+    borderTopLeftRadius:5,
+    borderTopRightRadius:20,
+    borderBottomRightRadius:5,
     padding: 5,
+    borderWidth: 2,
+
+    padding: 10,
+    borderColor: `#5854e8`,
   },
   greyPrice: {
     color: "#808080",
@@ -148,5 +178,6 @@ const styles = StyleSheet.create({
   price: {
     fontWeight: "bold",
     fontSize: 15,
+    
   },
 });

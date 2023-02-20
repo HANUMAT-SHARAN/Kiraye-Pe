@@ -3,6 +3,7 @@ import {
   DECREASE_QUANTITY,
   DELETE_FROM_CART,
   INCREASE_QUANTITY,
+  SET_TOTAL_PRICE,
   UPDATE_CART_ITEM,
 } from "../cart/cartActionType";
 import {
@@ -78,6 +79,12 @@ export const authReducer = (state = initialState, action) => {
         return {
           ...state,
           totalPrice: state.totalPrice - action.payload,
+        };
+      }
+      case SET_TOTAL_PRICE:{
+        return {
+          ...state,
+          totalPrice: action.payload,
         };
       }
 

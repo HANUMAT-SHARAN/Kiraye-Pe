@@ -97,7 +97,7 @@ const SignupScreen = ({ navigation }) => {
 
   return (
     <>
-      <ScrollView style={{ backgroundColor: "#a000ff" }}>
+      <ScrollView style={{ backgroundColor: "#5854e8" }}>
         <Modal
           visible={visible}
           backdropStyle={styles.backdrop}
@@ -231,10 +231,11 @@ const SignupScreen = ({ navigation }) => {
 
                 <Button
                   onPress={handleChange}
-                  appearance="outline"
+                  
                   size="large"
+                  color="#5854e8"
                   style={[styles.common, styles.button]}
-                  status="control"
+                  
                 >
                   Sign Up
                 </Button>
@@ -242,8 +243,8 @@ const SignupScreen = ({ navigation }) => {
                 <Button
                   onPress={() => navigation.navigate("Login")}
                   size="large"
-                  style={[styles.common]}
-                  status="success"
+                  style={[styles.common,styles.button]}
+                  color="#5854e8"
                 >
                   Login now
                 </Button>
@@ -287,7 +288,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   button: {
-    backgroundColor: "#a000ff",
+  
     color: "white",
 
     marginTop: 10,
@@ -315,7 +316,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     fontSize: 40,
     fontWeight: "bold",
-    backgroundColor: "#a000ff",
+    backgroundColor: "#5854e8",
     color: "white",
     borderBottomLeftRadius: 50,
     borderBottomRightRadius: 10,
@@ -326,11 +327,12 @@ const styles = StyleSheet.create({
     paddingRight: 30,
   },
   loginText: {
-    color: "blue",
+    color: "red",
     marginLeft: "auto",
     marginRight: "auto",
     marginTop: 10,
-    fontSize: 17,
+    fontSize: 15,
+    fontWeight:"bold"
   },
   backgroundOfName: {
     backgroundColor: "#07d1df",

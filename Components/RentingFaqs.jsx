@@ -8,13 +8,13 @@ const RentingFaqs = () => {
         img: `https://www.rentomojo.com/public/images/product/app-benefits/icons/common/1.png`, text: "We offer maintenance for your product after 12 months and annual cleaning—free of cost",
     }, { img: "https://www.rentomojo.com/public/images/product/app-benefits/icons/furniture/5.png", text: "Bored of the same product and style? Just upgrade after 12 months" }]
     return (
-        <View style={styles.MainDiv}>
+        <View >
 
-            <FlatList data={arr} renderItem={({ item }) => <View>
+            <FlatList data={arr} renderItem={({ item }) => <View style={styles.mainDiv}>
                 <Image style={styles.Img} source={{ uri: item.img }} />
                 <Text style={styles.text}>{item.text}</Text>
             </View>}
-                numColumns={1} />
+                numColumns={2} />
 
         </View>
     )
@@ -23,7 +23,7 @@ const RentingFaqs = () => {
 export default RentingFaqs
 
 const styles = StyleSheet.create({
-    MainDiv: { padding: 10, backgroundColor: "white" },
+    MainDiv: { padding: 10, backgroundColor: "white",width:200,marginLeft: "auto", marginRight: "auto", },
     Img: {
         width: 100,
         height: 100,
