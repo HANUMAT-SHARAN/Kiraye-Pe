@@ -57,6 +57,7 @@ const SignupScreen = ({ navigation }) => {
 
   const logout = () => {
     dispatch(logoutUser());
+    
     showLogout();
   };
   const handleChange = async () => {
@@ -372,11 +373,11 @@ const styles = StyleSheet.create({
                 display: "flex",
                 flexDirection: "row",
                 alignItems: "center",
-                padding: 10,
-                borderTopLeftRadius: 10,
-                borderBottomRightRadius: 10,
-                borderBottomLeftRadius: 10,
-                borderTopRightRadius: 10,
+                padding: 15,
+                borderColor: `#5854e8`, borderBottomLeftRadius: 30,
+                borderTopLeftRadius: 5,
+                borderTopRightRadius: 30,
+                borderBottomRightRadius: 5,
                 marginTop: 10,
               
   }

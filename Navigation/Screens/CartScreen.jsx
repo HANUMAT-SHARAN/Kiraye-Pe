@@ -67,7 +67,7 @@ const CartScreen = () => {
 
   const increaseQuantity = async (productId, id) => {
     console.log(id, "Userid", productId);
-   
+
     try {
       const data = await fetch(`https://rento-mojo-native-server.vercel.app/cartarr/${id}`, {
 
@@ -90,7 +90,7 @@ const CartScreen = () => {
         console.log("error ", error);
 
       }
-     
+
       getData()
       updated()
     } catch (error) {
@@ -98,8 +98,8 @@ const CartScreen = () => {
     }
   }
   const decreaseQuantity = async (productId, id) => {
-    
-   
+
+
     try {
       const data = await fetch(`https://rento-mojo-native-server.vercel.app/cartarr/${id}`, {
 
@@ -170,14 +170,14 @@ const CartScreen = () => {
       <ScrollView style={styles.mainScreen} refreshControl={
         <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
       }>
-
-        {isAuth ? usercart.map((el) => (
-          <CartProduct increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} removeproduct={removeproduct} {...el} />
-        )) : <View style={styles.emptycartImg}>
+        {usercart.length == 0 ? <View style={styles.emptycartImg}>
           <Text style={styles.catText}>Your Cart Is Empty Now!</Text>
           <Image style={{ width: 300, height: 300, marginRight: "auto", marginLeft: "auto" }} source={{ uri: `https://www.rentomojo.com/public/images/error/no-cart.png` }} />
 
-        </View>}
+        </View> : null}
+        {isAuth ? usercart.map((el) => (
+          <CartProduct increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} removeproduct={removeproduct} {...el} />
+        )) : null}
 
 
 

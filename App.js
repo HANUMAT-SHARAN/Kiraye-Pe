@@ -44,7 +44,7 @@ export default function App() {
                 options={{
                   headerStyle: { backgroundColor: "#5854e8" },
                   headerTintColor: "white",
-                  headerTitleAlign: "center",
+                  headerTitleAlign: "center",headerShown:false
                 }}
                 name="SingleProduct"
                 component={SingleProductScreen}

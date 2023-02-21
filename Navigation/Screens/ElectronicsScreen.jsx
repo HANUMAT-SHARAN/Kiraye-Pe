@@ -120,7 +120,7 @@ const ElectronicsScreen = ({ route, navigation }) => {
             style={styles.filterDiv}
           >
             <View
-              style={cat == "laptop" ? styles.activeImage : styles.activeImage}
+              style={[styles.activeImage] }
             >
               <Avatar
                 size={62}
@@ -142,7 +142,7 @@ const ElectronicsScreen = ({ route, navigation }) => {
           >
             <View
               style={
-                cat == "smartdevices" ? styles.activeImage : styles.activeImage
+                styles.activeImage 
               }
             >
               <Avatar

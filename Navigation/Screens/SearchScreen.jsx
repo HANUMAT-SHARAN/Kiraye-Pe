@@ -33,7 +33,7 @@ const SearchScreen = () => {
   }, [search]);
   return (
     <>
-      <View>
+      <View style={styles.seachInput}>
         <SearchBarAndroid
           placeholder="Search for any product"
           onChangeText={updateSearch}
@@ -49,4 +49,12 @@ const SearchScreen = () => {
 
 export default SearchScreen;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  seachInput:{marginTop:10,borderWidth:4,
+    borderRadius:20,width:"95%",padding:5,
+marginRight:"auto",marginLeft:"auto",borderColor:'#5854e8',
+borderBottomLeftRadius: 20,
+borderBottomRightRadius: 10,
+borderTopRightRadius: 20,
+borderTopLeftRadius: 10,}
+});

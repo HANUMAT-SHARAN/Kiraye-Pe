@@ -9,6 +9,7 @@ import { addProductIncart } from "../../Redux/cart/cartAction";
 
 import { Toast } from "react-native-toast-message/lib/src/Toast";
 import Advantages from "../../Components/Advantages";
+import { useNavigation } from "@react-navigation/native";
 
 const SingleProductScreen = ({ route }) => {
   const [value, setValue] = useState(8);
@@ -17,6 +18,7 @@ const SingleProductScreen = ({ route }) => {
   const [load, setLoad] = useState(false);
   const [refresh, setRefreshing] = useState(false)
   const { count, currentUser, isAuth } = useSelector((store) => store.authManager);
+  const navigation=useNavigation()
   const alert = () => {
     Toast.show({
       type: "success",
@@ -37,6 +39,26 @@ const SingleProductScreen = ({ route }) => {
   };
   const dispatch = useDispatch();
   const { title, img, price, deliveryicon } = data;
+
+  const getCartLength = async () => {
+    try {
+      let data = await fetch(
+        `https://rento-mojo-native-server.vercel.app/cartarr`
+      );
+      let res = await data.json();
+
+      let arr = res.filter((el) => el.email == currentUser.email)
+
+      let sum = 0;
+      for (let i = 0; i <= arr.length - 1; i++) {
+        console.log(arr[i].product.q,)
+        sum = sum + arr[i].product.price * arr[i].product.q
+      }
+
+      
+      setUserCart(arr)
+    } catch (error) { }
+  };
   const getData = async () => {
     setLoad(true);
     try {
@@ -96,8 +118,14 @@ const SingleProductScreen = ({ route }) => {
   if (load) {
     return <Loader />;
   }
-  return (
+  return <>
+  <View style={{marginTop:35, display: "flex", flexDirection: "row", justifyContent: "space-between", width: "95%", marginLeft: "auto", marginRight: "auto", padding: 5, margin: 5 }}>
+    <Button onPress={()=>navigation.goBack()} style={{ padding: 5, borderWidth: 5, borderRadius: 5 }} color={"white"}>   <Ionicons name="arrow-back" size={25} /></Button>
+
+    <Button onPress={()=>navigation.navigate("Cart")}  color={"white"}>   <Ionicons name="cart" size={25} /></Button>
+  </View>
     <ScrollView refreshControl={<RefreshControl onRefresh={doRefresh} refreshing={refresh} />}>
+
       <Image style={styles.heroImage} source={{ uri: img }} />
       <View style={styles.pricediv}>
         <Text style={styles.priceText}>
@@ -132,22 +160,22 @@ const SingleProductScreen = ({ route }) => {
       </View>
       <View style={styles.sliderDiv}>
         <Text style={{ fontSize: 18, fontWeight: "bold", padding: 10, }}>
-       <Ionicons name="star" size={20} />   {title}
+          <Ionicons name="star" size={20} />   {title}
         </Text>
-        <Text  style={{ fontSize: 13, fontWeight: "bold", padding: 10,color:"#8c9392" }}>How long you want to rent 
-       this for ? (Months) !</Text>
+        <Text style={{ fontSize: 13, fontWeight: "bold", padding: 10, color: "#8c9392" }}>How long you want to rent
+          this for ? (Months) !</Text>
         <Slider
           animationType="spring"
           allowTouchTrack={true}
           maximumValue={12}
-          minimumValue={4}t
+          minimumValue={4} t
           step={4}
           thumbTintColor="red"
           value={value}
           onValueChange={setValue}
           thumbStyle={{ height: 20, width: 16, backgroundColor: "red" }}
         />
-       
+
         <View style={styles.sliderText}>
           <Text style={{ fontSize: 12, fontWeight: "bold" }}>4+</Text>
           <Text style={{ fontSize: 12, fontWeight: "bold" }}>8+</Text>
@@ -168,7 +196,8 @@ const SingleProductScreen = ({ route }) => {
       </View>
       <Advantages />
     </ScrollView>
-  );
+  </>
+
 };
 
 export default SingleProductScreen;

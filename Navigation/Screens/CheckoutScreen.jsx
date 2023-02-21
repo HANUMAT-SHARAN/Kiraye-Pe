@@ -2,70 +2,104 @@ import { StyleSheet, Text, View, Image, ScrollView } from 'react-native'
 import React from 'react'
 import { useSelector } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
+import { Spinner } from '@ui-kitten/components';
 
 const CheckoutScreen = () => {
+    const [tick, showtick] = React.useState(false)
     const { totalPrice } =
         useSelector((store) => store.authManager);
     const navigation = useNavigation()
+    const setTickVisible=()=>{
+        showtick(true)
+        setTimeout(()=>{
+            navigation.navigate("Home")
+        },2000)
+
+    }
+    if (tick) {
+        return <View
+            style={styles.activeImage}>
+            <Image
+                style={{
+                    width: 300,
+                    height: 300,
+                }}
+                source={{
+                    uri: `https://i.postimg.cc/SsLCRgZk/tick.png`,
+                }}
+            />
+            <Text style={styles.catText}>Payment Done !😁</Text>
+            <Text style={{ marginRight: "auto", marginLeft: "auto", fontSize: 15, fontWeight: "bold",color:"#4d4c4d" }}>Redirecting Back To The Home Page ... </Text>
+            <Text style={{ marginRight: "auto", marginLeft: "auto", fontSize: 17, fontWeight: "bold", marginTop: 20 }}> <Spinner size='large' status='success' /></Text>
+        </View>
+    }
     return (
         <ScrollView>
-            <Text style={styles.catText}>CheckoutScreen {totalPrice}</Text>
+          <Text style={styles.totalPriceDiv}>Total Amount to Pay ₹ {totalPrice} </Text>
+            
 
-
-            <View onTouchEndCapture={() =>
-                navigation.navigate("Furniture", { category: "bedroom" })
-            } style={[styles.categoryDiv, styles.activeImage]}>
-                <Image
-                    style={styles.categoryImg}
-                    source={{
-                        uri: `https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Paytm_logo.jpg/800px-Paytm_logo.jpg?20170209143820`,
-                    }}
-                />
-                <Text style={styles.catText}>Bedroom</Text>
-
-            </View>
-
-
-            <View onTouchEndCapture={() =>
-                navigation.navigate("Furniture", { category: "bedroom" })
-            } style={[styles.categoryDiv, styles.activeImage]}>
-                <Image
-                    style={styles.categoryImg}
-                    source={{
-                        uri: `https://cdn0.iconfinder.com/data/icons/interior-design-flat/340/bedroom_room_interior_home_bed_furniture_lamp_house_pillows-256.png`,
-                    }}
-                />
-                <Text style={styles.catText}>Bedroom</Text>
-            </View>
-
-
-
-            <View onTouchEndCapture={() =>
-                navigation.navigate("Furniture", { category: "bedroom" })
-            } style={[styles.categoryDiv, styles.activeImage]}>
-                <Image
-                    style={styles.categoryImg}
-                    source={{
-                        uri: `https://cdn0.iconfinder.com/data/icons/interior-design-flat/340/bedroom_room_interior_home_bed_furniture_lamp_house_pillows-256.png`,
-                    }}
-                />
-                <Text style={styles.catText}>Bedroom</Text>
-
-            </View>
-           
-
+            <View style={styles.parentDiv
+            }>
                 <View onTouchEndCapture={() =>
-                    navigation.navigate("Furniture", { category: "bedroom" })
-                } style={[styles.categoryDiv, styles.activeImage]}>
+                    setTickVisible()
+                } style={[styles.activeImage]}>
                     <Image
                         style={styles.categoryImg}
                         source={{
-                            uri: `https://w7.pngwing.com/pngs/865/967/png-transparent-paytm-computer-icons-e-commerce-cashback-website-service-paytm-text-service-logo-thumbnail.png`,
+                            uri: `https://cdn2.iconfinder.com/data/icons/social-icons-color/512/paytm-512.png`,
                         }}
                     />
-                    <Text style={styles.catText}>Bedroom</Text>
+                    <Text style={styles.catText}>Paytm</Text>
+
                 </View>
-          
+
+
+                <View onTouchEndCapture={() =>
+                    setTickVisible()
+                } style={[styles.activeImage]}>
+                    <Image
+                        style={styles.categoryImg}
+                        source={{
+                            uri: `https://telecomtalk.info/wp-content/uploads/2022/12/gpay-how-to-create-or-find-upi.jpg`,
+                        }}
+                    />
+                    <Text style={styles.catText}>Google Pay</Text>
+                </View>
+            </View>
+
+
+            <View style={styles.parentDiv}>
+                <View onTouchEndCapture={() =>
+                    setTickVisible()
+                } style={[styles.activeImage]}>
+                    <Image
+                        style={styles.categoryImg}
+                        source={{
+                            uri: `https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/phonepe-logo-icon.png`,
+                        }}
+                    />
+                    <Text style={styles.catText}>Phone Pe</Text>
+
+                </View>
+
+
+                <View onTouchEndCapture={() =>
+                    setTickVisible()
+                } style={[styles.activeImage]}>
+                    <Image
+                        style={styles.categoryImg}
+                        source={{
+                            uri: `https://cdn4.iconfinder.com/data/icons/circle-payment/32/payment_006-amazon-512.png`,
+                        }}
+                    />
+                    <Text style={styles.catText}>Amazon Pay</Text>
+                </View>
+
+            </View>
+
+
+
+
 
         </ScrollView>
     )
@@ -75,56 +109,50 @@ export default CheckoutScreen
 
 const styles = StyleSheet.create({
     catText: {
-        fontSize: 20,
+        fontSize: 24,
         margin: 20,
         fontWeight: "bold",
         marginLeft: "auto", marginRight: "auto",
         color: "black"
     },
-    image: {
-        width: 320,
-        height: 320,
-        elevation: 2,
-        margin: 20,
-    },
-    parentDiv: {
-        display: "grid",
-    },
 
-    categoryDiv: {
-        alignItems: "center",
-        margin: 20,
-        width: "40%",
-        elevation: 0,
-        padding: 10,
-        backgroundColor: "white", borderBottomLeftRadius: 20,
-        borderTopLeftRadius: 5,
-        borderTopRightRadius: 20,
-        borderBottomRightRadius: 5,
-    },
+
     categoryImg: {
         width: 100,
-        height: 40,
+        height: 100,
+        padding:5, marginLeft: "auto",
+        marginRight: "auto",
+    },
+    parentDiv: {
+        display: "flex", flexDirection: "row"
     },
 
-    shadowProp: {
-        shadowOffset: { width: -2, height: 4 },
-        shadowColor: "#171717",
-        shadowOpacity: 0.2,
-        shadowRadius: 3,
-    },
-    elevation: {
-        elevation: 20,
-        shadowColor: "#52006A",
-    },
-    catParent: {
-        display: "flex",
-        flexDirection: "row",
-    },
     activeImage: {
         borderColor: "#5854e8",
         borderStyle: "solid",
         borderWidth: 4,
         borderRadius: 20,
+        backgroundColor: "white",
+        marginLeft: "auto",
+        marginRight: "auto",
+        padding: 30, margin: 6,
+        backgroundColor: "white",
+        borderBottomLeftRadius: 20,
+        borderTopLeftRadius: 5,
+        borderTopRightRadius: 20,
+        borderBottomRightRadius: 5,
     },
+    tickImg: {
+        width: 300,
+        height: 300,
+    },totalPriceDiv:
+        { marginRight: "auto", 
+        marginLeft: "auto", fontSize: 20,
+         fontWeight: "bold",color:"white",
+         margin: 20,backgroundColor:"#303131" ,padding:20,
+         borderBottomLeftRadius: 20,
+         borderTopLeftRadius: 5,
+         borderTopRightRadius: 20,
+         borderBottomRightRadius: 5,
+    }
 })
