@@ -16,17 +16,17 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     textAlign: "center",
     alignContent: "center",
-
+margin:1.5,
     borderColor: "red",
     padding: 2,
-    margin:3,
+   
  
   },
   
   textCat: {
     marginLeft:"auto",
     marginRight:"auto",
-    fontSize: 12,
+    fontSize: 11,
     marginTop: 2,
     fontWeight: "bold",
     color: "white",
@@ -72,7 +72,7 @@ const FitnessScreen = ({ route, navigation }) => {
             onTouchEndCapture={() => setCat("crosstrainer")}
             style={styles.filterDiv}
           >
-            <View style={cat == "crosstrainer" ? styles.activeImage : styles.activeImage}>
+            <View style={ styles.textCat }>
               <Avatar
                 size={62}
                 rounded
@@ -89,7 +89,7 @@ const FitnessScreen = ({ route, navigation }) => {
             onTouchEndCapture={() => setCat("treadmill")}
             style={styles.filterDiv}
           >
-           <View style={cat == "treadmill" ? styles.activeImage : styles.activeImage} >
+           <View style={styles.textCat} >
            <Avatar
               size={62}
               rounded
@@ -108,7 +108,7 @@ const FitnessScreen = ({ route, navigation }) => {
             onTouchEndCapture={() => setCat("cycle")}
             style={styles.filterDiv}
           >
-           <View style={cat == "cycle" ? styles.activeImage : styles.activeImage}>
+           <View style={ styles.textCat}>
            <Avatar
               size={62}
               rounded
@@ -118,14 +118,14 @@ const FitnessScreen = ({ route, navigation }) => {
             />
            </View>
             <Text   style={styles.textCat}>
-              Exercise Cycle
+              Cycle
             </Text>
           </View>
           <View
             onTouchEndCapture={() => setCat("massager")}
             style={styles.filterDiv}
           >
-           <View style={cat == "massager" ? styles.activeImage : styles.activeImage}>
+           <View style={ styles.textCat}>
            <Avatar
               size={62}
               rounded

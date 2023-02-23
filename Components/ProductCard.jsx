@@ -8,7 +8,17 @@ import { Button } from "@ui-kitten/components";
 const ProductCard = ({ img, title, price, id }) => {
   const navigation = useNavigation();
   const dispatch = useDispatch()
-
+  let count=0
+  let bag=""
+  for(let i=0;i<=title.length-1;i++){
+    if(count==17){
+      break;
+    }else{
+      bag=bag+title[i]
+      count++ 
+    }
+              
+  }
   const sendToSingleProduct = () => {
     navigation.navigate("SingleProduct", { title: title, id: id })
     dispatch(addInRecentlyWatched({ img, title, price, id }))
@@ -32,9 +42,11 @@ const ProductCard = ({ img, title, price, id }) => {
               shadowColor: "red"
             }}
           >
-            {title}{" "}
+            {
+             bag
+            }{" "}
           </Text>
-          <Text style={{ color: "black", fontWeight: "bold", fontSize: 19 }}>
+          <Text style={{ color: "black", fontWeight: "bold", fontSize: 18.4,marginRight:5 }}>
             ₹ {price} / month
           </Text>
           <Text style={{ fontWeight: "bold", fontSize: 12, marginTop: 5 }}>

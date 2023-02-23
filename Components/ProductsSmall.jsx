@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   },
   mainDiv: {
     width: 110,
-    height: 150,
+   
     margin:10,
     
     borderColor:"#c6c9cb",

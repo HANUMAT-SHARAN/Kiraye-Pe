@@ -21,14 +21,14 @@ const styles = StyleSheet.create({
     
     borderColor:"red",
     padding:4,
-    margin: 2,
+   
   },
  
    
   textCat: {
     marginLeft:"auto",
     marginRight:"auto",
-    fontSize: 12,
+    fontSize: 11,
     marginTop: 2,
     fontWeight: "bold",
     color: "white",
@@ -71,7 +71,7 @@ const FurnitureScreen = ({ route, navigation }) => {
             onTouchEndCapture={() => setCat("livingroom")}
             style={styles.filterDiv}
           >
-            <View style={styles.activeImage}><Avatar
+            <View style={styles.textCat}><Avatar
               size={62}
               rounded
               source={{
@@ -87,7 +87,7 @@ const FurnitureScreen = ({ route, navigation }) => {
             onTouchEndCapture={() => setCat("bedroom")}
             style={styles.filterDiv}
           >
-            <View style={styles.activeImage}><Avatar
+            <View style={styles.textCat}><Avatar
               size={62}
               rounded
               source={{

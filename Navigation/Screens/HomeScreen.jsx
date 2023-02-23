@@ -41,13 +41,17 @@ const windowHeight = Dimensions.get('window').height;
     },
   ];
   let homeImages = [
-    { img: `https://s.rmjo.in/Fitness-offer-banner-for-Web--2.jpg`, id: 1 },
-    { img: `https://s.rmjo.in/Paytm-Bank-Desktop-banner-%20(1).jpg`, id: 2 },
+    {img:`https://media.istockphoto.com/id/1192266899/photo/laughing-friends-having-fun-with-shopping-cart-isolated-on-blue.jpg?s=612x612&w=0&k=20&c=cctS306_2VtXCvSuDQm3vV8OIApEdmApUK35xaOVmOE=`,id:5},
+    { img: `https://media.istockphoto.com/id/1193750118/photo/beautiful-asian-woman-carrying-colorful-bags-shopping-online-with-mobile-phone.jpg?s=612x612&w=0&k=20&c=j1SpSX7c3qzBrUT5f7HRoOfxQnPxZY_c6yb3AvXA5f8=`, id: 1 },
+    { img: `https://media.istockphoto.com/id/1212062418/photo/handsome-man-with-laptop-and-credit-card-at-home-portrait.jpg?s=612x612&w=0&k=20&c=SNt2kwKv8xnnje-jKts2vQL22nXkkMW-G3KqUOnkJ2I=`, id: 2 },
+    { img: `https://media.istockphoto.com/id/1169378197/photo/stylish-shopaholic-with-purchases.jpg?s=612x612&w=0&k=20&c=RGwdnF0wrWV8NNBawXAbzAHUe8sMBpLsEvIICLR9dM4=`, id: 3 },
   ];
   return (
     <ScrollView>
       <FlatList
         horizontal
+        alwaysBounceHorizontal
+        showsHorizontalScrollIndicator={false}
         data={homeImages}
         renderItem={({ item }) => (
           <Image style={styles.image} source={{ uri: item.img }} />
@@ -71,7 +75,12 @@ const styles = StyleSheet.create({
     width: 320,
     height: 320,
     elevation: 20,
-    margin: 20,
+    margin: 10,
+    borderBottomLeftRadius: 30,
+    borderBottomRightRadius: 50,
+    borderTopRightRadius: 30,
+    borderTopLeftRadius: 50,
+    padding:5,
   },
   parentDiv: {
     display: "grid",

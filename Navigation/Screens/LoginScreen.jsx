@@ -141,7 +141,7 @@ const LoginScreen = ({ navigation }) => {
               style={[styles.common,styles.button]}
              
             >
-              Login
+              Login 
             </Button>
             <Text style={[styles.loginText]}>
               New User Create a new Account?{" "}
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
   Maindiv: {
     width: "85%",
     textAlign: "center",
-    height: 500,
+   padding:15,
     marginLeft: "auto",
     marginRight: "auto",
     marginTop: 10,
@@ -210,17 +210,17 @@ const styles = StyleSheet.create({
   mainText: {
     marginLeft: "auto",
     marginRight: "auto",
-    width: "80%",
+   
     marginTop: 10,
-    fontSize: 40,
+    fontSize: 30,
     fontWeight: "bold",
     backgroundColor: "#5854e8",
     color: "white",
-    borderBottomLeftRadius: 50,
+    borderBottomLeftRadius: 20,
     borderBottomRightRadius: 10,
-    borderTopRightRadius: 50,
+    borderTopRightRadius: 20,
     borderTopLeftRadius: 10,
-    padding: 15,
+    padding: 10,
     paddingLeft: 30,
     paddingRight: 30,
   },

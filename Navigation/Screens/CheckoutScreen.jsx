@@ -109,7 +109,7 @@ export default CheckoutScreen
 
 const styles = StyleSheet.create({
     catText: {
-        fontSize: 24,
+        fontSize: 20,
         margin: 20,
         fontWeight: "bold",
         marginLeft: "auto", marginRight: "auto",
@@ -118,9 +118,9 @@ const styles = StyleSheet.create({
 
 
     categoryImg: {
-        width: 100,
-        height: 100,
-        padding:5, marginLeft: "auto",
+        width: 80,
+        height: 80,
+         marginLeft: "auto",
         marginRight: "auto",
     },
     parentDiv: {

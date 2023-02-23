@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   textCat: {
     marginLeft:"auto",
     marginRight:"auto",
-    fontSize: 12,
+    fontSize: 11,
     marginTop: 2,
     fontWeight: "bold",
     color: "white",
@@ -69,7 +69,7 @@ const WorkFromHomeScreen = ({ route, navigation }) => {
             style={styles.filterDiv}
           >
             <View
-              style={cat == "wfm" ? styles.activeImage : styles.activeImage}
+              style={styles.textCat}
             >
               <Avatar
                 size={62}
@@ -81,61 +81,8 @@ const WorkFromHomeScreen = ({ route, navigation }) => {
             </View>
             <Text style={styles.textCat}>Chair</Text>
           </View>
-          <View
-            onTouchEndCapture={() => setCat("treadmill")}
-            style={styles.filterDiv}
-          >
-            <View
-              style={
-                cat == "treadmill" ? styles.activeImage : styles.activeImage
-              }
-            >
-              <Avatar
-                size={62}
-                rounded
-                source={{
-                  uri: "https://p.rmjo.in/productSquare/b8g0ufr1-500x500.jpg",
-                }}
-              />
-            </View>
-            <Text style={styles.textCat}>Tread Mills</Text>
-          </View>
-          <View
-            onTouchEndCapture={() => setCat("cycle")}
-            style={styles.filterDiv}
-          >
-            <View
-              style={cat == "cycle" ? styles.activeImage : styles.activeImage}
-            >
-              <Avatar
-                size={62}
-                rounded
-                source={{
-                  uri: "https://p.rmjo.in/productSquare/5319tgr7-500x500.jpg",
-                }}
-              />
-            </View>
-            <Text style={styles.textCat}>Exercise Cycle</Text>
-          </View>
-          <View
-            onTouchEndCapture={() => setCat("massager")}
-            style={styles.filterDiv}
-          >
-            <View
-              style={
-                cat == "massager" ? styles.activeImage : styles.activeImage
-              }
-            >
-              <Avatar
-                size={62}
-                rounded
-                source={{
-                  uri: "https://p.rmjo.in/productSquare/niqfc8xs-500x500.jpg",
-                }}
-              />
-            </View>
-            <Text style={styles.textCat}>Massagers</Text>
-          </View>
+          
+          
         </View>
       ),
     });

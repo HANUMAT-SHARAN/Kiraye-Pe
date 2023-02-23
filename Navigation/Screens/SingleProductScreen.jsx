@@ -140,7 +140,7 @@ const SingleProductScreen = ({ route }) => {
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
-            width: "60%",
+            width: "70%",
             marginLeft: 5,
             justifyContent: "space-around",
             padding: 10,

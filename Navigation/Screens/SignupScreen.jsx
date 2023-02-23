@@ -105,7 +105,7 @@ const SignupScreen = ({ navigation }) => {
           onBackdropPress={() => setVisible(false)}
         >
           <Button
-            size="giant"
+            size="small"
             style={{
               backgroundColor: "red",
               fontSize: 15,
@@ -155,7 +155,7 @@ const SignupScreen = ({ navigation }) => {
               <Button
                 onPress={() => navigation.navigate("Recently Watched Products")}
                 style={{
-                  width: "35%",
+                  // width: "35%",
                   marginLeft: "auto",
                   marginRight: "auto",
                 }}
@@ -185,7 +185,7 @@ const SignupScreen = ({ navigation }) => {
             />
 
             <ScrollView style={styles.Maindiv}>
-              <Text style={styles.mainText}>Sign Up</Text>
+              <Text style={styles.mainText}>Sign Up </Text>
               <View>
                 <Text style={[styles.text, styles.common]}>User Name</Text>
                 <Input
@@ -238,7 +238,7 @@ const SignupScreen = ({ navigation }) => {
                   style={[styles.common, styles.button]}
                   
                 >
-                  Sign Up
+                  Sign Up 
                 </Button>
                 <Text style={[styles.loginText]}>Already a User? </Text>
                 <Button
@@ -247,19 +247,14 @@ const SignupScreen = ({ navigation }) => {
                   style={[styles.common,styles.button]}
                   color="#5854e8"
                 >
-                  Login now
+                  Login 
                 </Button>
               </View>
             </ScrollView>
           </>
         )}
 
-        {/* <Button onPress={() => dispatch(increaseCount(count + 1))}>
-          Inc Count
-        </Button>
-        <Button onPress={() => dispatch(increaseCount(count - 1))}>
-          Dec Count
-        </Button> */}
+       
       </ScrollView>
     </>
   );
@@ -271,7 +266,7 @@ const styles = StyleSheet.create({
   Maindiv: {
     width: "85%",
     textAlign: "center",
-    height: 550,
+  
     marginLeft: "auto",
     marginRight: "auto",
     marginTop: 10,
@@ -281,6 +276,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 10,
     borderTopLeftRadius: 50,
     marginBottom: 30,
+    padding:10
   },
   common: {
     marginLeft: "auto",
@@ -292,15 +288,15 @@ const styles = StyleSheet.create({
   
     color: "white",
 
-    marginTop: 10,
+   
     borderBottomLeftRadius: 10,
     borderBottomRightRadius: 10,
     borderTopRightRadius: 10,
     borderTopLeftRadius: 10,
   },
   text: {
-    marginLeft: 20,
-    fontSize: 20,
+  
+    fontSize:18,
     fontWeight: "bold",
   },
   inputStyle: {
@@ -313,15 +309,15 @@ const styles = StyleSheet.create({
   mainText: {
     marginLeft: "auto",
     marginRight: "auto",
-    width: "60%",
+    
     marginTop: 10,
-    fontSize: 40,
+    fontSize: 30,
     fontWeight: "bold",
     backgroundColor: "#5854e8",
     color: "white",
-    borderBottomLeftRadius: 50,
+    borderBottomLeftRadius: 20,
     borderBottomRightRadius: 10,
-    borderTopRightRadius: 50,
+    borderTopRightRadius: 20,
     borderTopLeftRadius: 10,
     padding: 15,
     paddingLeft: 30,
@@ -344,7 +340,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#8a14ed",
     width: "20%",
     height: 80,
-    fontSize: 50,
+    fontSize: 40,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
     borderTopRightRadius: 20,
@@ -358,7 +354,7 @@ const styles = StyleSheet.create({
     padding: 5,
   },
   greet: {
-    fontSize: 30,
+    fontSize: 27,
     fontWeight: "bold",
     marginLeft: "auto",
     marginRight: "auto",

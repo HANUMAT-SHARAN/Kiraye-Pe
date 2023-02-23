@@ -51,14 +51,14 @@ const styles = StyleSheet.create({
 
     borderColor: "red",
     padding: 2,
-    margin: 2,
+   
   },
  
   
   textCat: {
     marginLeft:"auto",
     marginRight:"auto",
-    fontSize: 12,
+    fontSize: 10,
     marginTop: 2,
     fontWeight: "bold",
     color: "white",
@@ -142,7 +142,7 @@ const ElectronicsScreen = ({ route, navigation }) => {
           >
             <View
               style={
-                styles.activeImage 
+                styles.textCat 
               }
             >
               <Avatar

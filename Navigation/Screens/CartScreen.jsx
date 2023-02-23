@@ -153,20 +153,21 @@ const CartScreen = () => {
   }, [cart]);
   return (
     <>
-      <View style={styles.mainConatinerStyle}>
+     
 
-        <Button
-          onPress={() => sendToCheckout()}
+        {/* <Button
+         
           style={[styles.btn]}
 
-          size="giant"
+          size="large"
           color="red"
 
         >
-          {isAuth ? `Proceed To Checkout  ₹ ${tPrice}` : `Please login to buy Products 🥺`}
-        </Button>
+        <Text style={styles.catText}>  {isAuth ? `Proceed To Checkout  ₹ ${tPrice}` : `Please login to buy Products 🥺`}</Text>
+        </Button> */}
+        <Text  onPress={() => sendToCheckout()}  style={styles.totalPriceDiv}>{isAuth ? `Proceed To Checkout  ₹ ${tPrice}` : `Please login to buy Products 🥺`} </Text>
 
-      </View>
+     
       <ScrollView style={styles.mainScreen} refreshControl={
         <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
       }>
@@ -203,7 +204,9 @@ const styles = StyleSheet.create({
   btn: {
     backgroundColor: "red",
     marginTop: 5,
-    padding: 10,
+    marginBottom:5,
+    
+   
     width: "90%", marginLeft: "auto", marginRight: "auto"
 
   }, mainConatinerStyle: {
@@ -226,5 +229,14 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginLeft: "auto", marginRight: "auto",
     color: "white"
-  },
+  },totalPriceDiv:
+  { marginRight: "auto", 
+  marginLeft: "auto", fontSize: 20,
+   fontWeight: "bold",color:"white",
+   margin: 10,backgroundColor:"red" ,padding:13,
+   borderBottomLeftRadius: 20,
+   borderTopLeftRadius: 5,
+   borderTopRightRadius: 20,
+   borderBottomRightRadius: 5,
+}
 });

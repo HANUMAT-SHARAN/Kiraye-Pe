@@ -10,13 +10,25 @@ import {
   incQuantity,
   updateQuantity,
 } from "../Redux/cart/cartAction";
+import { useNavigation } from "@react-navigation/native";
 
 const CartProduct = ({ id, product, removeproduct, increaseQuantity, decreaseQuantity }) => {
-  const [count, setCount] = React.useState(1);
+  const [ setCount] = React.useState(1);
   const [productPrice, setNewProductPrice] = React.useState(product.price);
+  const navigation=useNavigation()
   const { currentUser, isAuth, recentlyWatched, cart, totalPrice } =
     useSelector((store) => store.authManager);
-
+    let count=0
+    let bag=""
+    for(let i=0;i<=product.title.length-1;i++){
+      if(count==17){
+        break;
+      }else{
+        bag=bag+product.title[i]
+        count++ 
+      }
+                
+    }
 
   const dispatch = useDispatch();
 
@@ -24,7 +36,7 @@ const CartProduct = ({ id, product, removeproduct, increaseQuantity, decreaseQua
 
   return (
     <>
-      <View style={styles.mainDiv}>
+      <View onTouchEnd={()=> navigation.navigate("SingleProduct", { title: product.title, id: product.id })}  style={styles.mainDiv}>
         <Image
           style={styles.Image}
           source={{
@@ -41,7 +53,7 @@ const CartProduct = ({ id, product, removeproduct, increaseQuantity, decreaseQua
         
         <View style={styles.titleDiv}>
           {/* Title and Delete button */}
-          <Text style={styles.title}>{product.title}</Text>
+          <Text style={styles.title}>{bag}</Text>
           <Button
             onPress={() => removeproduct(id)}
             style={[styles.common, { backgroundColor: "red" }]}
@@ -112,7 +124,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderColor: `#5854e8`,
     margin: 5,
-    padding: 10,
+  
   },
   common: {
     // width: "20%",
@@ -123,7 +135,7 @@ const styles = StyleSheet.create({
   },
   title: {
     width: "50%",
-    fontSize: 13,
+    fontSize: 14,
     fontWeight: "bold",
     margin: 5,
   },
@@ -177,7 +189,7 @@ const styles = StyleSheet.create({
   },
   price: {
     fontWeight: "bold",
-    fontSize: 15,
+    fontSize: 13,
     
   },
 });
