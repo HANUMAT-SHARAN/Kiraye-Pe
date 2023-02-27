@@ -17,7 +17,7 @@ import {
 } from "../../Redux/auth/authAction";
 
 const SignupScreen = ({ navigation }) => {
-  const [visible, setVisible] = React.useState(true);
+  const [visible, setVisible] = React.useState(false);
   const [secure, setSecure] = React.useState(true);
   const [userData, setUserData] = React.useState({
     name: "",
