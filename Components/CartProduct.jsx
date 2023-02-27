@@ -13,19 +13,19 @@ import {
 import { useNavigation } from "@react-navigation/native";
 
 const CartProduct = ({ id, product, removeproduct, increaseQuantity, decreaseQuantity }) => {
-  const [ setCount] = React.useState(1);
+  const [ count,setCount] = React.useState(1);
   const [productPrice, setNewProductPrice] = React.useState(product.price);
   const navigation=useNavigation()
   const { currentUser, isAuth, recentlyWatched, cart, totalPrice } =
     useSelector((store) => store.authManager);
-    let count=0
+    let counts=0
     let bag=""
     for(let i=0;i<=product.title.length-1;i++){
-      if(count==17){
+      if(counts==17){
         break;
       }else{
         bag=bag+product.title[i]
-        count++ 
+        counts++ 
       }
                 
     }
@@ -36,8 +36,9 @@ const CartProduct = ({ id, product, removeproduct, increaseQuantity, decreaseQua
 
   return (
     <>
-      <View onTouchEnd={()=> navigation.navigate("SingleProduct", { title: product.title, id: product.id })}  style={styles.mainDiv}>
+      <View   style={styles.mainDiv}>
         <Image
+        onTouchEnd={()=> navigation.navigate("SingleProduct", { title: product.title, id: product.id })}
           style={styles.Image}
           source={{
             uri: product.img,

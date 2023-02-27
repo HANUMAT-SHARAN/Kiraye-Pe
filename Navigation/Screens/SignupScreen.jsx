@@ -108,7 +108,7 @@ const SignupScreen = ({ navigation }) => {
             size="small"
             style={{
               backgroundColor: "red",
-              fontSize: 15,
+              fontSize: 18,
               padding: 10,
               height: 60,
               width: "100%",
@@ -339,7 +339,7 @@ const styles = StyleSheet.create({
   firstLetter: {
     backgroundColor: "#8a14ed",
     width: "20%",
-    height: 80,
+   
     fontSize: 40,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
@@ -349,9 +349,10 @@ const styles = StyleSheet.create({
     marginLeft: "auto",
     marginRight: "auto",
     fontWeight: "bold",
+    
     color: "white",
     marginTop: 30,
-    padding: 5,
+    padding:10
   },
   greet: {
     fontSize: 27,
