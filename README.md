@@ -37,7 +37,7 @@ Kiraye Pe is a Clone of the RentoMojo Android App Which is used for Taking produ
         <li>Clone our respository <a href="https://github.com/HANUMAT-SHARAN/Kiraye-Pe">https://github.com/HANUMAT-SHARAN/Kiraye-Pe</a></li>
         <li>Open our code in VS code</li>
         <li>Then do npm install</li>
-        <li>Then initialize the server by writing 'npm run start' on Terminal</li>
+        <li>Then initialize the server by writing 'npm start' on Terminal</li>
          <li>Congrats! you have successfully sarted the application.</li>
     </ul>
         <h1>Built with</h1>
