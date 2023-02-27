@@ -32,12 +32,18 @@ const MainContainer = () => {
     <>
       {/* <NavigationContainer> */}
       <Tab.Navigator
+     
         initialRouteName={homeName}
         screenOptions={({ route }) => ({
+
           headerStyle: {
             backgroundColor: "#5854e8",
 
           },
+           tabBarActiveTintColor: "#5854e8",
+            tabBarInactiveTintColor: "red",
+            tabBarStyle:[{display:"flex"},null],
+          
 
 
           headerTitleAlign: "center",
@@ -61,10 +67,7 @@ const MainContainer = () => {
             return <Ionicons name={iconName} size={size} color={color} />;
           },
         })}
-        tabBarOptions={{
-          activeTintColor: "#5854e8",
-          inactiveTintColor: "red",
-        }}
+       
       >
         <Tab.Screen name={homeName} component={HomeScreen} />
         {/* <Tab.Screen name={settingName} component={SettingScreen} /> */}

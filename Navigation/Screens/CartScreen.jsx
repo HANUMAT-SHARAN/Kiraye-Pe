@@ -30,7 +30,6 @@ const CartScreen = () => {
       type: "success",
       text1: "Quantiy Updated Succesfully 😁",
       text2: "Cool Bro 😁",
-
       position: "bottom",
       topOffset: 100,
     });
@@ -139,6 +138,9 @@ const CartScreen = () => {
     }
   };
   const sendToCheckout = () => {
+    if(!isAuth){
+      return
+    }
     dispatch(setNewPriceToCheckout(tPrice));
     navigation.navigate("Checkout");
   };
@@ -165,7 +167,6 @@ const CartScreen = () => {
           ? `Proceed To Checkout  ₹ ${tPrice}`
           : `Please login to buy Products 🥺`}{" "}
       </Text>
-
       <ScrollView
         style={styles.mainScreen}
         refreshControl={
