@@ -4,10 +4,7 @@ Kiraye Pe is a Clone of the RentoMojo Android App Which is used for Taking produ
 <h3> Live App Install Link https://expo.dev/@hanumat_sharan/Kiraye-Pe </h3>
 <h3> Just Click On This Link Install Expo App From Playstore  </h3>
 <h1>Scan the below Given QR Code And Application will Start Running </h1>
-<img src="https://i.postimg.cc/3Nmgrm7K/Screenshot-from-2023-02-27-20-56-36.png"/>
-
-
-
+<img src="https://qr.expo.dev/expo-go?owner=hanumat_sharan&slug=Kiraye-Pe&releaseChannel=default&host=exp.host" />
  <h1>Home Page</h1>
   <div style="display:flex"> 
  <img src="https://i.postimg.cc/CKnn4jXS/1677506790616.jpg" alt=""> 
@@ -37,7 +34,7 @@ Kiraye Pe is a Clone of the RentoMojo Android App Which is used for Taking produ
     <p>If you want to run our project in your local machine</p>
     <p>Follow the given steps:</p>
     <ul>
-        <li>Clone our respository <a href="https://github.com/HANUMAT-SHARAN/filthy-range-8205">https://github.com/HANUMAT-SHARAN/filthy-range-8205</a></li>
+        <li>Clone our respository <a href="https://github.com/HANUMAT-SHARAN/Kiraye-Pe">https://github.com/HANUMAT-SHARAN/Kiraye-Pe</a></li>
         <li>Open our code in VS code</li>
         <li>Then do npm install</li>
         <li>Then initialize the server by writing 'npm run start' on Terminal</li>
