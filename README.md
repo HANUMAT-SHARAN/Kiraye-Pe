@@ -3,7 +3,7 @@ Kiraye Pe is a Clone of the RentoMojo Android App Which is used for Taking produ
 
 <h3> Live App Install Link https://expo.dev/@hanumat_sharan/Kiraye-Pe </h3>
 <h3> Just Click On This Link Install Expo App From Playstore  </h3>
-<h1>Scan the below Given QR Code And Application will Start Running </h1>
+<h1>Scan the below Given QR Code And in Few Seconds  Application will Start Running </h1>
 <img src="https://qr.expo.dev/expo-go?owner=hanumat_sharan&slug=Kiraye-Pe&releaseChannel=default&host=exp.host" />
  <h1>Home Page</h1>
   <div style="display:flex"> 
