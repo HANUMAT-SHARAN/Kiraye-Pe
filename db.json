@@ -680,10 +680,6 @@
       "deliveryicon": "https://www.rentomojo.com/public/images/fast-delivery/fast-delivery.svg"
     }
   ],
-  "users": [
-
-  ],
-  "cartarr": [
-    
-  ]
+  "users": [],
+  "cartarr": []
 }

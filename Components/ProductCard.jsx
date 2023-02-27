@@ -8,16 +8,16 @@ import { Button } from "@ui-kitten/components";
 const ProductCard = ({ img, title, price, id }) => {
   const navigation = useNavigation();
   const dispatch = useDispatch()
-  let count=0
-  let bag=""
-  for(let i=0;i<=title.length-1;i++){
-    if(count==17){
+  let count = 0
+  let bag = ""
+  for (let i = 0; i <= title.length - 1; i++) {
+    if (count == 17) {
       break;
-    }else{
-      bag=bag+title[i]
-      count++ 
+    } else {
+      bag = bag + title[i]
+      count++
     }
-              
+
   }
   const sendToSingleProduct = () => {
     navigation.navigate("SingleProduct", { title: title, id: id })
@@ -43,10 +43,10 @@ const ProductCard = ({ img, title, price, id }) => {
             }}
           >
             {
-             bag
+              bag
             }{" "}
           </Text>
-          <Text style={{ color: "black", fontWeight: "bold", fontSize: 18.4,marginRight:5 }}>
+          <Text style={{ color: "black", fontWeight: "bold", fontSize: 18.4, marginRight: 5 }}>
             ₹ {price} / month
           </Text>
           <Text style={{ fontWeight: "bold", fontSize: 12, marginTop: 5 }}>
@@ -77,15 +77,15 @@ const Card = StyleSheet.create({
     borderRadius: 30,
     alignItems: "center",
     textAlign: "center",
-  
+
     borderWidth: 5,
-   
+
     padding: 10,
 
-    borderColor:`#5854e8`,borderBottomLeftRadius:30,
-    borderTopLeftRadius:5,
-    borderTopRightRadius:30,
-    borderBottomRightRadius:5,
+    borderColor: `#5854e8`, borderBottomLeftRadius: 30,
+    borderTopLeftRadius: 5,
+    borderTopRightRadius: 30,
+    borderBottomRightRadius: 5,
   },
   image: {
     width: "95%",

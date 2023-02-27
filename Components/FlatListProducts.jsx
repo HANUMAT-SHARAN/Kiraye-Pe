@@ -4,15 +4,15 @@ import ProductsSmall from "./ProductsSmall";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
 
-const FlatListProducts = ({ data,titleText,redirectto }) => {
-    const navigation=useNavigation()
+const FlatListProducts = ({ data, titleText, redirectto }) => {
+  const navigation = useNavigation()
   return (
     <>
       <View onTouchEndCapture={() =>
-            navigation.navigate(redirectto, { category: "laptops" })
-          } style={styles.topDiv}>
+        navigation.navigate(redirectto, { category: "laptops" })
+      } style={styles.topDiv}>
         <Text style={styles.text}>{titleText}</Text>
-        <Text   style={styles.text}>
+        <Text style={styles.text}>
           View All <Ionicons name="arrow-forward" color={"white"} size={20} />
         </Text>
       </View>
@@ -40,18 +40,18 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     marginTop: 5,
-    marginBottom:5,
+    marginBottom: 5,
     marginTop: 10,
-    backgroundColor:"#5854e8",color:"white",padding:7, borderBottomLeftRadius:10,
-    borderTopLeftRadius:10,
-    borderTopRightRadius:10,
-    borderBottomRightRadius:10,
+    backgroundColor: "#5854e8", color: "white", padding: 7, borderBottomLeftRadius: 10,
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
+    borderBottomRightRadius: 10,
   },
   text: {
-    fontSize:16,
+    fontSize: 16,
     marginTop: 5,
-    marginBottom:5,
-    fontWeight:"bold",
+    marginBottom: 5,
+    fontWeight: "bold",
     color: "white",
   },
 });

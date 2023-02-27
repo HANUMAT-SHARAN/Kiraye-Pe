@@ -57,7 +57,7 @@ const SignupScreen = ({ navigation }) => {
 
   const logout = () => {
     dispatch(logoutUser());
-    
+
     showLogout();
   };
   const handleChange = async () => {
@@ -163,8 +163,8 @@ const SignupScreen = ({ navigation }) => {
                 View Now
               </Button>
             </View>
-            
-            
+
+
           </>
         ) : (
           <>
@@ -232,29 +232,29 @@ const SignupScreen = ({ navigation }) => {
 
                 <Button
                   onPress={handleChange}
-                  
+
                   size="large"
                   color="#5854e8"
                   style={[styles.common, styles.button]}
-                  
+
                 >
-                  Sign Up 
+                  Sign Up
                 </Button>
                 <Text style={[styles.loginText]}>Already a User? </Text>
                 <Button
                   onPress={() => navigation.navigate("Login")}
                   size="large"
-                  style={[styles.common,styles.button]}
+                  style={[styles.common, styles.button]}
                   color="#5854e8"
                 >
-                  Login 
+                  Login
                 </Button>
               </View>
             </ScrollView>
           </>
         )}
 
-       
+
       </ScrollView>
     </>
   );
@@ -266,7 +266,7 @@ const styles = StyleSheet.create({
   Maindiv: {
     width: "85%",
     textAlign: "center",
-  
+
     marginLeft: "auto",
     marginRight: "auto",
     marginTop: 10,
@@ -276,7 +276,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 10,
     borderTopLeftRadius: 50,
     marginBottom: 30,
-    padding:10
+    padding: 10
   },
   common: {
     marginLeft: "auto",
@@ -285,18 +285,18 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   button: {
-  
+
     color: "white",
 
-   
+
     borderBottomLeftRadius: 10,
     borderBottomRightRadius: 10,
     borderTopRightRadius: 10,
     borderTopLeftRadius: 10,
   },
   text: {
-  
-    fontSize:18,
+
+    fontSize: 18,
     fontWeight: "bold",
   },
   inputStyle: {
@@ -309,7 +309,7 @@ const styles = StyleSheet.create({
   mainText: {
     marginLeft: "auto",
     marginRight: "auto",
-    
+
     marginTop: 10,
     fontSize: 30,
     fontWeight: "bold",
@@ -329,7 +329,7 @@ const styles = StyleSheet.create({
     marginRight: "auto",
     marginTop: 10,
     fontSize: 15,
-    fontWeight:"bold"
+    fontWeight: "bold"
   },
   backgroundOfName: {
     backgroundColor: "#07d1df",
@@ -339,7 +339,7 @@ const styles = StyleSheet.create({
   firstLetter: {
     backgroundColor: "#8a14ed",
     width: "20%",
-   
+
     fontSize: 40,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
@@ -349,10 +349,10 @@ const styles = StyleSheet.create({
     marginLeft: "auto",
     marginRight: "auto",
     fontWeight: "bold",
-    
+
     color: "white",
     marginTop: 30,
-    padding:10
+    padding: 10
   },
   greet: {
     fontSize: 27,
@@ -361,21 +361,21 @@ const styles = StyleSheet.create({
     marginRight: "auto",
     color: "white",
     marginTop: 20,
-  },recentlyDiv:{
+  }, recentlyDiv: {
 
-                width: "95%",
-                marginLeft: "auto",
-                marginRight: "auto",
-                backgroundColor: "white",
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                padding: 15,
-                borderColor: `#5854e8`, borderBottomLeftRadius: 30,
-                borderTopLeftRadius: 5,
-                borderTopRightRadius: 30,
-                borderBottomRightRadius: 5,
-                marginTop: 10,
-              
+    width: "95%",
+    marginLeft: "auto",
+    marginRight: "auto",
+    backgroundColor: "white",
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    padding: 15,
+    borderColor: `#5854e8`, borderBottomLeftRadius: 30,
+    borderTopLeftRadius: 5,
+    borderTopRightRadius: 30,
+    borderBottomRightRadius: 5,
+    marginTop: 10,
+
   }
 });

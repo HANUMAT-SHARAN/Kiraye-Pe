@@ -13,7 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { increaseCount, setLoginedUser } from "../../Redux/auth/authAction";
 
 const LoginScreen = ({ navigation }) => {
-     const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const { count } = useSelector((store) => store.authManager);
   const [visible, setVisible] = React.useState(false);
   const [secure, setSecure] = React.useState(true);
@@ -45,23 +45,23 @@ const LoginScreen = ({ navigation }) => {
     });
   };
 
-  const verifyUser =  () => {
- 
+  const verifyUser = () => {
+
     for (let i = 0; i <= allUsers.length - 1; i++) {
-        if ( allUsers[i].email === userData.email && allUsers[i].password === userData.password ) {
-          showSuccess();
-          setUserData({email:'',password:""})
-          console.log(allUsers[i])
-          dispatch(setLoginedUser(allUsers[i]))
-          navigation.navigate("Home")
-          return 
-         
-        }
+      if (allUsers[i].email === userData.email && allUsers[i].password === userData.password) {
+        showSuccess();
+        setUserData({ email: '', password: "" })
+        console.log(allUsers[i])
+        dispatch(setLoginedUser(allUsers[i]))
+        navigation.navigate("Home")
+        return
+
       }
-      showError()
-      setUserData({email:'',password:""})
-      return
-  
+    }
+    showError()
+    setUserData({ email: '', password: "" })
+    return
+
   };
 
   const getdata = async () => {
@@ -77,15 +77,15 @@ const LoginScreen = ({ navigation }) => {
     }
   };
 
-  React.useEffect(()=>{
+  React.useEffect(() => {
     getdata();
-  },[])
- 
+  }, [])
+
 
   return (
     <>
       <ScrollView style={{ backgroundColor: "#5854e8" }}>
-      
+
         <Image
           style={{
             borderTopLeftRadius: 20,
@@ -135,13 +135,13 @@ const LoginScreen = ({ navigation }) => {
             />
 
             <Button
-              onPress={()=>verifyUser()}
-             
+              onPress={() => verifyUser()}
+
               size="large"
-              style={[styles.common,styles.button]}
-             
+              style={[styles.common, styles.button]}
+
             >
-              Login 
+              Login
             </Button>
             <Text style={[styles.loginText]}>
               New User Create a new Account?{" "}
@@ -149,14 +149,14 @@ const LoginScreen = ({ navigation }) => {
             <Button
               onPress={() => navigation.navigate("Signup")}
               size="large"
-              style={[styles.common,styles.button]}
-             
+              style={[styles.common, styles.button]}
+
             >
               Singup Now
             </Button>
           </View>
         </ScrollView>
-      
+
       </ScrollView>
     </>
   );
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
   Maindiv: {
     width: "85%",
     textAlign: "center",
-   padding:15,
+    padding: 15,
     marginLeft: "auto",
     marginRight: "auto",
     marginTop: 10,
@@ -210,7 +210,7 @@ const styles = StyleSheet.create({
   mainText: {
     marginLeft: "auto",
     marginRight: "auto",
-   
+
     marginTop: 10,
     fontSize: 30,
     fontWeight: "bold",
@@ -230,9 +230,9 @@ const styles = StyleSheet.create({
     marginRight: "auto",
     marginTop: 10,
     fontSize: 15,
-    fontWeight:"bold"
-  },button: {
-  
+    fontWeight: "bold"
+  }, button: {
+
     color: "white",
 
     marginTop: 10,

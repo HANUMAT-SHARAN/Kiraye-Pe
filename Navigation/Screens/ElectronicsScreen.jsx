@@ -51,13 +51,13 @@ const styles = StyleSheet.create({
 
     borderColor: "red",
     padding: 2,
-   
+
   },
- 
-  
+
+
   textCat: {
-    marginLeft:"auto",
-    marginRight:"auto",
+    marginLeft: "auto",
+    marginRight: "auto",
     fontSize: 10,
     marginTop: 2,
     fontWeight: "bold",
@@ -72,7 +72,7 @@ const ElectronicsScreen = ({ route, navigation }) => {
       text2: "Hurray now you can explore more ",
       position: "bottom",
       topOffset: 150,
-      
+
     });
   };
   const [cat, setCat] = React.useState("laptop");
@@ -84,7 +84,7 @@ const ElectronicsScreen = ({ route, navigation }) => {
       );
       let res = await data.json();
       setData(res);
-    } catch (error) {}
+    } catch (error) { }
   };
 
   React.useEffect(() => {
@@ -111,7 +111,7 @@ const ElectronicsScreen = ({ route, navigation }) => {
                 }}
               />
             </View>
-            <Text  style={styles.textCat}>
+            <Text style={styles.textCat}>
               Smart Phones
             </Text>
           </View>
@@ -120,7 +120,7 @@ const ElectronicsScreen = ({ route, navigation }) => {
             style={styles.filterDiv}
           >
             <View
-              style={[styles.activeImage] }
+              style={[styles.activeImage]}
             >
               <Avatar
                 size={62}
@@ -131,7 +131,7 @@ const ElectronicsScreen = ({ route, navigation }) => {
               />
             </View>
             <Text
-               style={styles.textCat}
+              style={styles.textCat}
             >
               Laptops
             </Text>
@@ -142,7 +142,7 @@ const ElectronicsScreen = ({ route, navigation }) => {
           >
             <View
               style={
-                styles.textCat 
+                styles.textCat
               }
             >
               <Avatar
@@ -153,7 +153,7 @@ const ElectronicsScreen = ({ route, navigation }) => {
                 }}
               />
             </View>
-            <Text  style={styles.textCat}>
+            <Text style={styles.textCat}>
               Smart Devices
             </Text>
           </View>
@@ -173,7 +173,7 @@ const ElectronicsScreen = ({ route, navigation }) => {
               />
             </View>
             <Text
-               style={styles.textCat}
+              style={styles.textCat}
             >
               Tablets
             </Text>

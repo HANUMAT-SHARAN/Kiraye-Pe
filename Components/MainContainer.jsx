@@ -17,7 +17,7 @@ const homeName = "Home";
 const settingName = "Setting";
 const productsName = "Products";
 const searchName = "Search";
-const cartName="Cart"
+const cartName = "Cart"
 
 import { useSelector } from "react-redux";
 import CartScreen from "../Navigation/Screens/CartScreen";
@@ -26,8 +26,8 @@ import CartScreen from "../Navigation/Screens/CartScreen";
 const Tab = createBottomTabNavigator();
 
 const MainContainer = () => {
-const {count,currentUser,isAuth}=useSelector((store)=>store.authManager)
-const signupName = isAuth?`${currentUser.name}`:"Signup";
+  const { count, currentUser, isAuth } = useSelector((store) => store.authManager)
+  const signupName = isAuth ? `${currentUser.name}` : "Signup";
   return (
     <>
       {/* <NavigationContainer> */}
@@ -36,12 +36,12 @@ const signupName = isAuth?`${currentUser.name}`:"Signup";
         screenOptions={({ route }) => ({
           headerStyle: {
             backgroundColor: "#5854e8",
-            
+
           },
 
-       
+
           headerTitleAlign: "center",
-          headerTintColor:"white",
+          headerTintColor: "white",
           tabBarIcon: ({ focuesd, color, size }) => {
             let iconName;
             let rn = route.name;
@@ -55,7 +55,7 @@ const signupName = isAuth?`${currentUser.name}`:"Signup";
               iconName = focuesd ? "search" : "search";
             } else if (rn == signupName) {
               iconName = focuesd ? "person" : "person";
-            }else if(rn==cartName){
+            } else if (rn == cartName) {
               iconName = focuesd ? "cart" : "cart";
             }
             return <Ionicons name={iconName} size={size} color={color} />;

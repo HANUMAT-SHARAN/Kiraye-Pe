@@ -28,8 +28,8 @@ const styles = StyleSheet.create({
     MainDiv: {
         width: 159,
         margin: 10, backgroundColor: "white",
-       
-         borderBottomLeftRadius: 20,
+
+        borderBottomLeftRadius: 20,
         borderTopLeftRadius: 5,
         borderTopRightRadius: 20,
         borderBottomRightRadius: 5,

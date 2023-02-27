@@ -23,7 +23,7 @@ const RentingFaqs = () => {
 export default RentingFaqs
 
 const styles = StyleSheet.create({
-    MainDiv: { padding: 10, backgroundColor: "white",width:200,marginLeft: "auto", marginRight: "auto", },
+    MainDiv: { padding: 10, backgroundColor: "white", width: 200, marginLeft: "auto", marginRight: "auto", },
     Img: {
         width: 100,
         height: 100,

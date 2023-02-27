@@ -1,14 +1,14 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const SettingScreen = ({navigation,route}) => {
+const SettingScreen = ({ navigation, route }) => {
 
-  const {id}=route.params
+  const { id } = route.params
   return (
     <View>
-      <Text onPress={()=>navigation.navigate("Home"
-           
-        
+      <Text onPress={() => navigation.navigate("Home"
+
+
       )}>SettingScreen {id}</Text>
 
     </View>

@@ -76,17 +76,17 @@ export const authReducer = (state = initialState, action) => {
       };
     }
     case DECREASE_QUANTITY: {
-        return {
-          ...state,
-          totalPrice: state.totalPrice - action.payload,
-        };
-      }
-      case SET_TOTAL_PRICE:{
-        return {
-          ...state,
-          totalPrice: action.payload,
-        };
-      }
+      return {
+        ...state,
+        totalPrice: state.totalPrice - action.payload,
+      };
+    }
+    case SET_TOTAL_PRICE: {
+      return {
+        ...state,
+        totalPrice: action.payload,
+      };
+    }
 
     default: {
       return initialState;

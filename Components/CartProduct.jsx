@@ -13,22 +13,22 @@ import {
 import { useNavigation } from "@react-navigation/native";
 
 const CartProduct = ({ id, product, removeproduct, increaseQuantity, decreaseQuantity }) => {
-  const [ count,setCount] = React.useState(1);
+  const [count, setCount] = React.useState(1);
   const [productPrice, setNewProductPrice] = React.useState(product.price);
-  const navigation=useNavigation()
+  const navigation = useNavigation()
   const { currentUser, isAuth, recentlyWatched, cart, totalPrice } =
     useSelector((store) => store.authManager);
-    let counts=0
-    let bag=""
-    for(let i=0;i<=product.title.length-1;i++){
-      if(counts==17){
-        break;
-      }else{
-        bag=bag+product.title[i]
-        counts++ 
-      }
-                
+  let counts = 0
+  let bag = ""
+  for (let i = 0; i <= product.title.length - 1; i++) {
+    if (counts == 17) {
+      break;
+    } else {
+      bag = bag + product.title[i]
+      counts++
     }
+
+  }
 
   const dispatch = useDispatch();
 
@@ -36,9 +36,9 @@ const CartProduct = ({ id, product, removeproduct, increaseQuantity, decreaseQua
 
   return (
     <>
-      <View   style={styles.mainDiv}>
+      <View style={styles.mainDiv}>
         <Image
-        onTouchEnd={()=> navigation.navigate("SingleProduct", { title: product.title, id: product.id })}
+          onTouchEnd={() => navigation.navigate("SingleProduct", { title: product.title, id: product.id })}
           style={styles.Image}
           source={{
             uri: product.img,
@@ -46,12 +46,14 @@ const CartProduct = ({ id, product, removeproduct, increaseQuantity, decreaseQua
         />
         <View style={{
           backgroundColor: "#5854e8", height: 40, width: 70, marginLeft: "auto",
-          marginRight: "auto",borderBottomRightRadius: 3,borderBottomLeftRadius:3,
+          marginRight: "auto", borderBottomRightRadius: 3, borderBottomLeftRadius: 3,
         }}></View>
-         <View style={{backgroundColor:"#5854e8",height:15, width: "60%",marginLeft: "auto",
-          marginRight: "auto",borderBottomRightRadius: 5,borderBottomLeftRadius:5, borderTopLeftRadius: 5,
-          borderTopRightRadius: 5,marginBottom:10}}></View>
-        
+        <View style={{
+          backgroundColor: "#5854e8", height: 15, width: "60%", marginLeft: "auto",
+          marginRight: "auto", borderBottomRightRadius: 5, borderBottomLeftRadius: 5, borderTopLeftRadius: 5,
+          borderTopRightRadius: 5, marginBottom: 10
+        }}></View>
+
         <View style={styles.titleDiv}>
           {/* Title and Delete button */}
           <Text style={styles.title}>{bag}</Text>
@@ -63,7 +65,7 @@ const CartProduct = ({ id, product, removeproduct, increaseQuantity, decreaseQua
             <Ionicons name="trash" size={30} />
           </Button>
         </View>
-        
+
         <View style={styles.quantity}>
           <Button disabled={product.q == 5} onPress={() => [increaseQuantity(product.id, id), setCount(count + 1)]} style={[styles.btn]}>
             +
@@ -125,7 +127,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderColor: `#5854e8`,
     margin: 5,
-  
+
   },
   common: {
     // width: "20%",
@@ -141,7 +143,7 @@ const styles = StyleSheet.create({
     margin: 5,
   },
   titleDiv: {
-    
+
     display: "flex",
     flexDirection: "row",
     marginLeft: "auto",
@@ -151,10 +153,10 @@ const styles = StyleSheet.create({
     margin: 5,
     padding: 5,
     borderWidth: 2,
-    borderBottomLeftRadius:20,
-    borderTopLeftRadius:5,
-    borderTopRightRadius:20,
-    borderBottomRightRadius:5,
+    borderBottomLeftRadius: 20,
+    borderTopLeftRadius: 5,
+    borderTopRightRadius: 20,
+    borderBottomRightRadius: 5,
     padding: 10,
     borderColor: `#5854e8`,
   },
@@ -165,7 +167,7 @@ const styles = StyleSheet.create({
     marginLeft: "auto",
     marginRight: "auto",
     justifyContent: "space-between",
-    padding: 5,margin:5,
+    padding: 5, margin: 5,
   },
   priceDiv: {
     width: "80%",
@@ -173,10 +175,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     marginLeft: "auto",
     marginRight: "auto",
-    justifyContent: "space-between", borderBottomLeftRadius:20,
-    borderTopLeftRadius:5,
-    borderTopRightRadius:20,
-    borderBottomRightRadius:5,
+    justifyContent: "space-between", borderBottomLeftRadius: 20,
+    borderTopLeftRadius: 5,
+    borderTopRightRadius: 20,
+    borderBottomRightRadius: 5,
     padding: 5,
     borderWidth: 2,
 
@@ -191,6 +193,6 @@ const styles = StyleSheet.create({
   price: {
     fontWeight: "bold",
     fontSize: 13,
-    
+
   },
 });

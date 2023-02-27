@@ -9,11 +9,11 @@ const CheckoutScreen = () => {
     const { totalPrice } =
         useSelector((store) => store.authManager);
     const navigation = useNavigation()
-    const setTickVisible=()=>{
+    const setTickVisible = () => {
         showtick(true)
-        setTimeout(()=>{
+        setTimeout(() => {
             navigation.navigate("Home")
-        },2000)
+        }, 2000)
 
     }
     if (tick) {
@@ -29,14 +29,14 @@ const CheckoutScreen = () => {
                 }}
             />
             <Text style={styles.catText}>Payment Done !😁</Text>
-            <Text style={{ marginRight: "auto", marginLeft: "auto", fontSize: 15, fontWeight: "bold",color:"#4d4c4d" }}>Redirecting Back To The Home Page ... </Text>
+            <Text style={{ marginRight: "auto", marginLeft: "auto", fontSize: 15, fontWeight: "bold", color: "#4d4c4d" }}>Redirecting Back To The Home Page ... </Text>
             <Text style={{ marginRight: "auto", marginLeft: "auto", fontSize: 17, fontWeight: "bold", marginTop: 20 }}> <Spinner size='large' status='success' /></Text>
         </View>
     }
     return (
         <ScrollView>
-          <Text style={styles.totalPriceDiv}>Total Amount to Pay ₹ {totalPrice} </Text>
-            
+            <Text style={styles.totalPriceDiv}>Total Amount to Pay ₹ {totalPrice} </Text>
+
 
             <View style={styles.parentDiv
             }>
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
     categoryImg: {
         width: 80,
         height: 80,
-         marginLeft: "auto",
+        marginLeft: "auto",
         marginRight: "auto",
     },
     parentDiv: {
@@ -145,14 +145,15 @@ const styles = StyleSheet.create({
     tickImg: {
         width: 300,
         height: 300,
-    },totalPriceDiv:
-        { marginRight: "auto", 
+    }, totalPriceDiv:
+    {
+        marginRight: "auto",
         marginLeft: "auto", fontSize: 20,
-         fontWeight: "bold",color:"white",
-         margin: 20,backgroundColor:"#303131" ,padding:20,
-         borderBottomLeftRadius: 20,
-         borderTopLeftRadius: 5,
-         borderTopRightRadius: 20,
-         borderBottomRightRadius: 5,
+        fontWeight: "bold", color: "white",
+        margin: 20, backgroundColor: "#303131", padding: 20,
+        borderBottomLeftRadius: 20,
+        borderTopLeftRadius: 5,
+        borderTopRightRadius: 20,
+        borderBottomRightRadius: 5,
     }
 })

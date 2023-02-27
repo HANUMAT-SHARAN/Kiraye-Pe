@@ -18,7 +18,7 @@ const SingleProductScreen = ({ route }) => {
   const [load, setLoad] = useState(false);
   const [refresh, setRefreshing] = useState(false)
   const { count, currentUser, isAuth } = useSelector((store) => store.authManager);
-  const navigation=useNavigation()
+  const navigation = useNavigation()
   const alert = () => {
     Toast.show({
       type: "success",
@@ -55,7 +55,7 @@ const SingleProductScreen = ({ route }) => {
         sum = sum + arr[i].product.price * arr[i].product.q
       }
 
-      
+
       setUserCart(arr)
     } catch (error) { }
   };
@@ -119,11 +119,11 @@ const SingleProductScreen = ({ route }) => {
     return <Loader />;
   }
   return <>
-  <View style={{marginTop:35, display: "flex", flexDirection: "row", justifyContent: "space-between", width: "95%", marginLeft: "auto", marginRight: "auto", padding: 5, margin: 5 }}>
-    <Button onPress={()=>navigation.goBack()} style={{ padding: 5, borderWidth: 5, borderRadius: 5 }} color={"white"}>   <Ionicons name="arrow-back" size={25} /></Button>
+    <View style={{ marginTop: 35, display: "flex", flexDirection: "row", justifyContent: "space-between", width: "95%", marginLeft: "auto", marginRight: "auto", padding: 5, margin: 5 }}>
+      <Button onPress={() => navigation.goBack()} style={{ padding: 5, borderWidth: 5, borderRadius: 5 }} color={"white"}>   <Ionicons name="arrow-back" size={25} /></Button>
 
-    <Button onPress={()=>navigation.navigate("Cart")}  color={"white"}>   <Ionicons name="cart" size={25} /></Button>
-  </View>
+      <Button onPress={() => navigation.navigate("Cart")} color={"white"}>   <Ionicons name="cart" size={25} /></Button>
+    </View>
     <ScrollView refreshControl={<RefreshControl onRefresh={doRefresh} refreshing={refresh} />}>
 
       <Image style={styles.heroImage} source={{ uri: img }} />

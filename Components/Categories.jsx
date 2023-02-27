@@ -4,15 +4,15 @@ import { StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 const Categories = () => {
-    const navigation=useNavigation()
+  const navigation = useNavigation()
   return (
     <View>
       <View style={styles.catParent}>
-        <View 
+        <View
           onTouchEndCapture={() =>
             navigation.navigate("Electronics", { category: "laptops" })
           }
-          style={[styles.categoryDiv,styles.activeImage]}
+          style={[styles.categoryDiv, styles.activeImage]}
         >
           <Image
             style={styles.categoryImg}
@@ -22,9 +22,9 @@ const Categories = () => {
           />
           <Text style={styles.catText}>Electronics</Text>
         </View>
-        <View   onTouchEndCapture={() =>
-            navigation.navigate("Furniture", { category: "bedroom" })
-          } style={[styles.categoryDiv, styles.activeImage]}>
+        <View onTouchEndCapture={() =>
+          navigation.navigate("Furniture", { category: "bedroom" })
+        } style={[styles.categoryDiv, styles.activeImage]}>
           <Image
             style={styles.categoryImg}
             source={{
@@ -36,8 +36,8 @@ const Categories = () => {
       </View>
       <View style={styles.catParent}>
         <View onTouchEndCapture={() =>
-            navigation.navigate("Fitness", { category: "treadmill" })
-          }  style={[styles.categoryDiv, styles.activeImage]}>
+          navigation.navigate("Fitness", { category: "treadmill" })
+        } style={[styles.categoryDiv, styles.activeImage]}>
           <Image
             style={styles.categoryImg}
             source={{
@@ -47,8 +47,8 @@ const Categories = () => {
           <Text style={styles.catText}>Fitness</Text>
         </View>
         <View onTouchEndCapture={() =>
-            navigation.navigate("WorkfromHome", { category: "wfm" })
-          } style={[styles.categoryDiv, styles.activeImage]}>
+          navigation.navigate("WorkfromHome", { category: "wfm" })
+        } style={[styles.categoryDiv, styles.activeImage]}>
           <Image
             style={styles.categoryImg}
             source={{
@@ -80,11 +80,11 @@ const styles = StyleSheet.create({
     margin: 20,
     width: "40%",
     elevation: 0,
-    padding:10,
-    backgroundColor:"white",borderBottomLeftRadius:20,
-    borderTopLeftRadius:5,
-    borderTopRightRadius:20,
-    borderBottomRightRadius:5,
+    padding: 10,
+    backgroundColor: "white", borderBottomLeftRadius: 20,
+    borderTopLeftRadius: 5,
+    borderTopRightRadius: 20,
+    borderBottomRightRadius: 5,
   },
   categoryImg: {
     width: 40,

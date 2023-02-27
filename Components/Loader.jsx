@@ -7,12 +7,12 @@ const Loader = () => {
     <View style={{ marginLeft: "auto", marginRight: "auto" }}>
 
 
-      <View style={{ marginRight: "auto", marginLeft: "auto", marginTop: 20,marginBottom:20 }} ><Spinner size="giant" status='danger' /></View>
+      <View style={{ marginRight: "auto", marginLeft: "auto", marginTop: 20, marginBottom: 20 }} ><Spinner size="giant" status='danger' /></View>
 
 
 
       <Skeleton circle width={340} height={600} />
-     
+
     </View>
   )
 }

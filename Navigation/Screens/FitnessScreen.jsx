@@ -16,22 +16,22 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     textAlign: "center",
     alignContent: "center",
-margin:1.5,
+    margin: 1.5,
     borderColor: "red",
     padding: 2,
-   
- 
+
+
   },
-  
+
   textCat: {
-    marginLeft:"auto",
-    marginRight:"auto",
+    marginLeft: "auto",
+    marginRight: "auto",
     fontSize: 11,
     marginTop: 2,
     fontWeight: "bold",
     color: "white",
   }
-  
+
 });
 const FitnessScreen = ({ route, navigation }) => {
   const showSuccess = () => {
@@ -41,7 +41,7 @@ const FitnessScreen = ({ route, navigation }) => {
       text2: "Hurray now you can explore more ",
       position: "bottom",
       topOffset: 150,
-      
+
     });
   };
   const [cat, setCat] = React.useState("treadmill");
@@ -53,7 +53,7 @@ const FitnessScreen = ({ route, navigation }) => {
       );
       let res = await data.json();
       setData(res);
-      
+
     } catch (error) {
 
     }
@@ -72,7 +72,7 @@ const FitnessScreen = ({ route, navigation }) => {
             onTouchEndCapture={() => setCat("crosstrainer")}
             style={styles.filterDiv}
           >
-            <View style={ styles.textCat }>
+            <View style={styles.textCat}>
               <Avatar
                 size={62}
                 rounded
@@ -81,25 +81,25 @@ const FitnessScreen = ({ route, navigation }) => {
                 }}
               />
             </View>
-            <Text   style={styles.textCat}>
-              Cross Tread 
+            <Text style={styles.textCat}>
+              Cross Tread
             </Text>
           </View>
           <View
             onTouchEndCapture={() => setCat("treadmill")}
             style={styles.filterDiv}
           >
-           <View style={styles.textCat} >
-           <Avatar
-              size={62}
-              rounded
-              source={{
-                uri: "https://p.rmjo.in/productSquare/b8g0ufr1-500x500.jpg",
-              }}
-            />
-           </View>
+            <View style={styles.textCat} >
+              <Avatar
+                size={62}
+                rounded
+                source={{
+                  uri: "https://p.rmjo.in/productSquare/b8g0ufr1-500x500.jpg",
+                }}
+              />
+            </View>
             <Text
-                style={styles.textCat}
+              style={styles.textCat}
             >
               Tread Mills
             </Text>
@@ -108,16 +108,16 @@ const FitnessScreen = ({ route, navigation }) => {
             onTouchEndCapture={() => setCat("cycle")}
             style={styles.filterDiv}
           >
-           <View style={ styles.textCat}>
-           <Avatar
-              size={62}
-              rounded
-              source={{
-                uri: "https://p.rmjo.in/productSquare/5319tgr7-500x500.jpg",
-              }}
-            />
-           </View>
-            <Text   style={styles.textCat}>
+            <View style={styles.textCat}>
+              <Avatar
+                size={62}
+                rounded
+                source={{
+                  uri: "https://p.rmjo.in/productSquare/5319tgr7-500x500.jpg",
+                }}
+              />
+            </View>
+            <Text style={styles.textCat}>
               Cycle
             </Text>
           </View>
@@ -125,17 +125,17 @@ const FitnessScreen = ({ route, navigation }) => {
             onTouchEndCapture={() => setCat("massager")}
             style={styles.filterDiv}
           >
-           <View style={ styles.textCat}>
-           <Avatar
-              size={62}
-              rounded
-              source={{
-                uri: "https://p.rmjo.in/productSquare/niqfc8xs-500x500.jpg",
-              }}
-            />
-           </View>
+            <View style={styles.textCat}>
+              <Avatar
+                size={62}
+                rounded
+                source={{
+                  uri: "https://p.rmjo.in/productSquare/niqfc8xs-500x500.jpg",
+                }}
+              />
+            </View>
             <Text
-                style={styles.textCat}
+              style={styles.textCat}
             >
               Massagers
             </Text>

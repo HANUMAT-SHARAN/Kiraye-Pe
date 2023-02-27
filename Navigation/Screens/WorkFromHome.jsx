@@ -23,10 +23,10 @@ const styles = StyleSheet.create({
     margin: 2,
     color: "white",
   },
- 
+
   textCat: {
-    marginLeft:"auto",
-    marginRight:"auto",
+    marginLeft: "auto",
+    marginRight: "auto",
     fontSize: 11,
     marginTop: 2,
     fontWeight: "bold",
@@ -52,7 +52,7 @@ const WorkFromHomeScreen = ({ route, navigation }) => {
       );
       let res = await data.json();
       setData(res);
-    } catch (error) {}
+    } catch (error) { }
   };
 
   React.useEffect(() => {
@@ -81,8 +81,8 @@ const WorkFromHomeScreen = ({ route, navigation }) => {
             </View>
             <Text style={styles.textCat}>Chair</Text>
           </View>
-          
-          
+
+
         </View>
       ),
     });

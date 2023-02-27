@@ -7,7 +7,7 @@ import {
   Image,
   ScrollView,
 } from "react-native";
-import {Dimensions} from 'react-native';
+import { Dimensions } from 'react-native';
 import React from "react";
 import Categories from "../../Components/Categories";
 import Filter from "../../Components/Filter";
@@ -17,7 +17,7 @@ import Advantages from "../../Components/Advantages";
 
 const HomeScreen = ({ navigation, route }) => {
   const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
+  const windowHeight = Dimensions.get('window').height;
   let category = [
     {
       img: `https://cdn0.iconfinder.com/data/icons/interior-design-flat/340/bedroom_room_interior_home_bed_furniture_lamp_house_pillows-256.png`,
@@ -41,7 +41,7 @@ const windowHeight = Dimensions.get('window').height;
     },
   ];
   let homeImages = [
-    {img:`https://media.istockphoto.com/id/1192266899/photo/laughing-friends-having-fun-with-shopping-cart-isolated-on-blue.jpg?s=612x612&w=0&k=20&c=cctS306_2VtXCvSuDQm3vV8OIApEdmApUK35xaOVmOE=`,id:5},
+    { img: `https://media.istockphoto.com/id/1192266899/photo/laughing-friends-having-fun-with-shopping-cart-isolated-on-blue.jpg?s=612x612&w=0&k=20&c=cctS306_2VtXCvSuDQm3vV8OIApEdmApUK35xaOVmOE=`, id: 5 },
     { img: `https://media.istockphoto.com/id/1193750118/photo/beautiful-asian-woman-carrying-colorful-bags-shopping-online-with-mobile-phone.jpg?s=612x612&w=0&k=20&c=j1SpSX7c3qzBrUT5f7HRoOfxQnPxZY_c6yb3AvXA5f8=`, id: 1 },
     { img: `https://media.istockphoto.com/id/1212062418/photo/handsome-man-with-laptop-and-credit-card-at-home-portrait.jpg?s=612x612&w=0&k=20&c=SNt2kwKv8xnnje-jKts2vQL22nXkkMW-G3KqUOnkJ2I=`, id: 2 },
     { img: `https://media.istockphoto.com/id/1169378197/photo/stylish-shopaholic-with-purchases.jpg?s=612x612&w=0&k=20&c=RGwdnF0wrWV8NNBawXAbzAHUe8sMBpLsEvIICLR9dM4=`, id: 3 },
@@ -60,10 +60,10 @@ const windowHeight = Dimensions.get('window').height;
       <Categories />
       {/* <Filter/> */}
       <Text style={styles.catText}>You would love to get this at Home !</Text>
-      <HomeProductSlider/>
+      <HomeProductSlider />
       <Text style={styles.catText}>There is  more to renting !</Text>
-      <Advantages/>
-    
+      <Advantages />
+
     </ScrollView>
   );
 };
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 50,
     borderTopRightRadius: 30,
     borderTopLeftRadius: 50,
-    padding:5,
+    padding: 5,
   },
   parentDiv: {
     display: "grid",
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     fontSize: 17,
     margin: 20,
     fontWeight: "bold",
-    
+
   },
   shadowProp: {
     shadowOffset: { width: -2, height: 4 },

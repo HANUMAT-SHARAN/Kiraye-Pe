@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View,ScrollView } from "react-native";
+import { StyleSheet, Text, View, ScrollView } from "react-native";
 import React from "react";
 import { Avatar } from "@rneui/themed";
 import ProductCard from "../../Components/ProductCard";
@@ -11,23 +11,23 @@ const styles = StyleSheet.create({
     marginTop: 6,
     display: "flex",
     flexDirection: "row",
-    textAlign:"center",
+    textAlign: "center",
   },
   filterDiv: {
-    display:"flex",
-    flexDirection:"column",
+    display: "flex",
+    flexDirection: "column",
     textAlign: "center",
-    alignContent:"center",
-    
-    borderColor:"red",
-    padding:4,
-   
+    alignContent: "center",
+
+    borderColor: "red",
+    padding: 4,
+
   },
- 
-   
+
+
   textCat: {
-    marginLeft:"auto",
-    marginRight:"auto",
+    marginLeft: "auto",
+    marginRight: "auto",
     fontSize: 11,
     marginTop: 2,
     fontWeight: "bold",
@@ -42,7 +42,7 @@ const FurnitureScreen = ({ route, navigation }) => {
       text2: "Hurray now you can explore more ",
       position: "bottom",
       topOffset: 150,
-      
+
     });
   };
   const [cat, setCat] = React.useState("bedroom");
@@ -54,7 +54,7 @@ const FurnitureScreen = ({ route, navigation }) => {
       );
       let res = await data.json();
       setData(res);
-    } catch (error) {}
+    } catch (error) { }
   };
 
   React.useEffect(() => {
@@ -67,7 +67,7 @@ const FurnitureScreen = ({ route, navigation }) => {
     navigation.setOptions({
       headerTitle: () => (
         <View style={styles.parentDiv}>
-           <View
+          <View
             onTouchEndCapture={() => setCat("livingroom")}
             style={styles.filterDiv}
           >
@@ -82,8 +82,8 @@ const FurnitureScreen = ({ route, navigation }) => {
             <Text style={styles.textCat}>
               Living Room
             </Text>
-          </View> 
-           <View
+          </View>
+          <View
             onTouchEndCapture={() => setCat("bedroom")}
             style={styles.filterDiv}
           >
@@ -94,12 +94,12 @@ const FurnitureScreen = ({ route, navigation }) => {
                 uri: "https://p.rmjo.in/productSquare/hc4dc706-500x500.jpg",
               }}
             /></View>
-           
+
             <Text style={styles.textCat}>
               Bedroom
             </Text>
-          </View> 
-         {/* <View
+          </View>
+          {/* <View
             onTouchEndCapture={() => setCat("smartdevices")}
             style={styles.filterDiv}
           >
