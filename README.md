@@ -1,8 +1,8 @@
 # Kiraye Pe
 Kiraye Pe is a Clone of the RentoMojo Android App Which is used for Taking products home on rented basis to use them according the required Time Duration By Taking Some Rent From the Customer
 
-<h3> Live App Install Link https://expo.dev/@hanumat_sharan/Kiraye-Pe </h3>
-<h3> Just Click On This Link Install Expo App From Playstore  </h3>
+<h2> Live App Install Link https://expo.dev/@hanumat_sharan/Kiraye-Pe </h2>
+<h2> Just Click On This Link Install Expo App From Playstore  </h2>
 <h1>Scan the below Given QR Code And in Few Seconds  Application will Start Running </h1>
 <img src="https://qr.expo.dev/expo-go?owner=hanumat_sharan&slug=Kiraye-Pe&releaseChannel=default&host=exp.host" />
  <h1>Home Page</h1>
